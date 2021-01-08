@@ -1,0 +1,22 @@
+{
+  "admin": [
+    {
+      "id": "amirjadhav@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "neeraj",
+      "password": "12345"
+    }
+  ],
+  "users": [
+    {
+      "id": "user1",
+      "password": "123"
+    },
+    {
+      "id": "user1",
+      "password": "123"
+    }
+  ]
+}
