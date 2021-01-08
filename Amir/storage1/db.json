@@ -1,0 +1,27 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Who invented JavaScript?",
+      "answers": {
+        "a": "Douglas Crockford",
+        "b": "Sheryl Sandberg",
+        "c": "Brendan Eich",
+        "d": "amir jadhav"
+      },
+      "answer": "d"
+    },
+    {
+      "id": 2,
+      "question": "Who1 invented JavaScript?",
+      "answers": {
+        "a": "Douglas Crockford",
+        "b": "Sheryl Sandberg",
+        "c": "Brendan Eich",
+        "d": "amir jadhav"
+      },
+      "answer": "d"
+    }
+    
+  ]
+}
