@@ -1,0 +1,36 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+header{
+    height: 20%;
+    background-color: #114B5F;
+}
+nav{
+    background-color: #028090;
+    height: 80%;
+    float: left;
+    width: 20%;
+    border: 2px solid #E4FDE1;
+
+}
+
+.nav-item{
+    width: 100%;
+    margin-top: 5%;
+    padding: 10%;
+    font-size: large;
+    border: #114B5F 5px solid;
+
+}
+
+button{
+    background-color: #E4FDE1;
+}
+
+section
+{
+    background-color: #456990;
+    height: 80%;
+}
