@@ -15,6 +15,11 @@ $(document).ready(function () {
           alert("invalid credentials");
         }
       },
+      error: function (e) {
+        if (e.statusText === "Not Found") {
+          alert("User not found");
+        }
+      },
     });
     e.preventDefault();
   });

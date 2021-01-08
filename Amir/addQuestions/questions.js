@@ -1,17 +1,9 @@
 $(document).ready(function () {
-  // $.ajax({
-  //   method: "POST",
-  //   url: "db.json",
-  //   success: function (x) {},
-  //   data: {},
-  //   complete: function (data) {},
-  //   error: (e) => {
-  //     alert("Error" + e);
-  //   },
-  // });
+
+  //code to get data into table
 
   $("#addQuestion").click(function (e) {
-    var person = {
+    var que = {
       id: 12,
       question: $("#question").val(),
       answers: {
@@ -32,7 +24,7 @@ $(document).ready(function () {
         alert("written");
         alert(data)
       },
-      data: JSON.stringify(person),
+      data: JSON.stringify(que),
     });
     e.preventDefault();
   });
@@ -45,7 +37,7 @@ $(document).ready(function () {
       success: function (data) {
         alert("written");
       },
-      data: JSON.stringify(person),
+      data: JSON.stringify(que),
     });
   });
 });
