@@ -17,3 +17,8 @@ table, th, td {
 th, td {
 padding: 15px;
 }
+
+button{
+    background-color: aqua;
+    color:aliceblue;
+}
