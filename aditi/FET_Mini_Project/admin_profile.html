@@ -50,23 +50,7 @@
 
 
         <!-- for password update -->
-        <script>
-            var newpass, oldpwd;
-            oldpwd = document.getElementById('oldp').value;
-            newpass = document.getElementById('newp').value;
-            $.ajax({
-                type: "POST",
-                url: "your_service_url",
-                data: { "newpass": newpass, "oldpass": oldpwd },
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (msg) {
-                    alert("success");
-                },
-                error: function (msg) {
-                }
-            });
-        </script>
+       
         <div class="current-pwd">
             <label for="current password" class="form-label">Current Password</label>
             <input type="password" class="form-control" id="admin-pwd" placeholder="Password">
