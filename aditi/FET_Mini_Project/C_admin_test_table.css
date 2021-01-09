@@ -1,0 +1,20 @@
+.tableContainer {
+    width: 800px;
+    height: 200px;
+   
+    margin: auto;
+    margin-top:5%;
+    width: 50%;
+    
+
+
+
+}
+span{
+    margin-top:2%;
+    align-items: center;
+}
+
+.buttonContainer {
+    text-align: center;
+}
