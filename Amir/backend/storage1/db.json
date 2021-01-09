@@ -21,6 +21,15 @@
         "d": "amir jadhav"
       },
       "answer": "d"
+    },
+    {
+      "id": 3,
+      "question": "Who1 invented JavaScript?",
+      "answers": {
+        "a": "Douglas Crockford",
+        "b": "Sheryl Sandberg"
+      },
+      "answer": "a"
     }
     
   ]
