@@ -26,3 +26,14 @@ img{
 .container-fluid{
     width: 100%;
 }
+.btn-light{
+    border: 2px gray solid;
+
+}
+
+.btn-dark{
+    width: 100%;
+}
+.btn-light:hover{
+    border: 2px gray solid;
+}

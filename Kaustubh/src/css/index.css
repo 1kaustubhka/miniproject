@@ -5,42 +5,45 @@ html,body{
 }
 
 header{
-    height: 10%;
-    color:#616161;
+    height: 15%;
+    color:#e0e1dd;
     /*background-color: #e0e1dd;*/
     
 }
-nav{
+.navbar{
     /*background-color: #bdbdbd;*/
     height: 100%;
     float: left;
     width: 15%;
-    border: 1px #e0e1dd solid;
+   
 }
 
 
 .nav-item{
-    width: 100%;
+    width: 75%;
     margin-top: 5%;
     padding: 10%;
-    height: 25%;
+    height: 50%;
     font-size: large;
-    border: #e0e1dd 10px round solid;
+   
 }
 
 .nav-item:hover{
     /* background-color:aquamarine ; */
     width: 100%;
+    
 }
 
 button{
     /* background-color: #616161; */
-    color: #616161;
+   
     border-radius: 25%;
-    border: #e0e1dd 10px round solid;
+   
     /* color: #e0e1dd; */
     width: 100%;
 }
+
+
 
 section
 {
@@ -50,6 +53,7 @@ section
     float: left;
     height: 100%;
     overflow-y: scroll; 
+   
 
 }
 ::-webkit-scrollbar{
@@ -67,6 +71,11 @@ section
 
 .card{
     margin: 5%;
+}
+
+.card-img-top{
+  width: 50%;
+  height: 50%;
 }
 
 /* theme */
