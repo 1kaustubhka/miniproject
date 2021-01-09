@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="admin_profile.css">
+    <title>Admin Profile</title>
+</head>
+
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+
+    <div class="profile-container ">
+        <h2> <span class="badge bg-secondary">Admin Profile</span></h2>
+
+        <!-- admin name -->
+
+
+
+
+        <!-- for email-->
+        <div class="email">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div><br>
+
+        <!-- Mention updation performed -->
+        <div class="message">
+            <label for="exampleFormControlTextarea1" class="form-label">Mention the Updations performed in Quiz!</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+        <!-- for contact number -->
+        <div class="contact">
+            <label for="exampleFormControlInput1" class="form-label">Contact Number :</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="xxxxxxxxxx">
+        </div><br>
+
+
+        <h3>
+            Update Password :
+        </h3><br>
+
+
+        <!-- for password update -->
+        <script>
+            var newpass, oldpwd;
+            oldpwd = document.getElementById('oldp').value;
+            newpass = document.getElementById('newp').value;
+            $.ajax({
+                type: "POST",
+                url: "your_service_url",
+                data: { "newpass": newpass, "oldpass": oldpwd },
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    alert("success");
+                },
+                error: function (msg) {
+                }
+            });
+        </script>
+        <div class="current-pwd">
+            <label for="exampleDropdownFormPassword2" class="form-label">Current Password</label>
+            <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+        </div><br>
+
+        <div class="new-pwd">
+            <label for="exampleDropdownFormPassword2" class="form-label">New Password</label>
+            <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password"><br>
+            <a href="one.html" class="btn btn-success">Submit Password</a>
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>
