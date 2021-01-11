@@ -1,8 +1,11 @@
 $(document).ready(() => {
   //Code to add the question into json file.
-  $("#addQuestion").click(function (e) {
+  $("body").on("click","#addQuestion",function (e) {  
+    let qid = parseInt(this.id.substr(11,))     //qid is for question id.
+    qid = qid + 1
+    console.log(qid)
     var que = {
-      id: 12,
+      id: qid,
       question: $("#question").val(),
       answers: {
         a: $("#option1").val(),
@@ -13,6 +16,7 @@ $(document).ready(() => {
       answer: $("#correct").val(),
       marks: $("#marks").val(),
     };
+    
     console.log("Adding");
     $.ajax({
       url: "http://localhost:3000/questions/",
@@ -76,10 +80,34 @@ $(document).ready(() => {
       });
     },
   });
+
+  //Function to delete a question.
   $(document).on("click", ".del", function () {
-    alert(this.id);
+    let did = this.id.substr(3,)
+    let counter = 0;
+    console.log(this.id.substr(3,))
+    $.ajax({
+      url: "http://localhost:3000/questions",
+      type: "GET",
+      dataType: "json",
+      contentType: "application/json",
+      success: (q) => {
+        did--;
+        q.forEach((data) => {
+           if(did == counter){
+            delete data;
+            console.log(data);
+           }
+           counter++;
+         })
+        
+        console.log(q[did]);
+      }
+    });
   });
 
+
+  //Function to update a question.
   $(document).on("click", ".edit", function () {
     let eid = this.id.substr(4,)
     console.log(this.id.substr(4,))
@@ -104,10 +132,9 @@ $(document).ready(() => {
           }
         }
       )}
+      
     });
   })
-
-
 });
 
 
