@@ -9,9 +9,9 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-   
+    <script src="./lib/jquery-3.5.1.js"></script>
     <link rel="stylesheet" href="table.css">
-    <script src="storage.js"></script>
+    <!-- <script src="storage.js"></script> -->
   </head>
   <body>
 
@@ -92,7 +92,7 @@
                       <input type="text" id="editOption2" name="editOption2" placeholder="Option">
                       <label for="email"><i class="fa fa-envelope"></i> Answer </label>
                       <input type="text" id="editAnswer" name="editAnswer" placeholder="Answer">
-                      <input type="submit" value="Change" class="btn" id="addQuestion">
+                      <input type="submit" value="Change" class="btn" id="changeQuestion">
                     </div>
                     
                     <div class="col-50">
@@ -122,6 +122,8 @@
     <table id="questions"></table>
     <button>b</button>
     <h2></h2>
-    <script src="./lib/jquery-3.5.1.js"></script>
+  
+    <button id="del"> delete</button>
+    <script src="cat.js"></script>
   </body>
 </html>

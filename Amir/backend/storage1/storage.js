@@ -1,4 +1,5 @@
 $(document).ready(() => {
+
   //Code to add the question into json file.
   $("body").on("click","#addQuestion",function (e) {  
     let qid = parseInt(this.id.substr(11,))     //qid is for question id.
@@ -100,14 +101,12 @@ $(document).ready(() => {
            }
            counter++;
          })
-        
-        console.log(q[did]);
       }
     });
   });
 
 
-  //Function to update a question.
+  //Function to open the Modal to edit a question.
   $(document).on("click", ".edit", function () {
     let eid = this.id.substr(4,)
     console.log(this.id.substr(4,))
@@ -129,10 +128,34 @@ $(document).ready(() => {
         
             jQuery.noConflict();
             $('#myModal').modal('show');
+            
           }
         }
+        
       )}
-      
+
+    });
+  })
+
+  //Function to update a question after opening the modal
+  $(document).on("click", "#changeQuestion", function () {
+    let eid = parseInt(this.id.substr(4,))
+    console.log(eid)
+    let counter = 0;
+    $.ajax({
+      url: "http://localhost:3000/questions",
+      type: "PATCH",
+      dataType: "json",
+      contentType: "application/json",
+      success: (q) => {
+        q.forEach((data) => {
+           if(eid == counter){
+            data.question = $("#editQuestion").val()
+            console.log($("#editQuestion").val());
+           }
+           counter++;
+          }
+      )}
     });
   })
 });
