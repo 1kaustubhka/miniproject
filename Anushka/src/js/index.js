@@ -3,10 +3,9 @@ $(document).ready(() => {
     localStorage.setItem("theme", th);
     $("nav").load('nav_bar.html', () => {//navbar jquery comes here
         $("#profile").click(() => {
+//_____________________________________________________________
             $("section").load('profile.html', () => {//profile jquery
-                $("#profile_button").click(() => {
-                    alert("Profile Jquery");
-                })
+               
             });
         })
         $("#home").click(() => {
