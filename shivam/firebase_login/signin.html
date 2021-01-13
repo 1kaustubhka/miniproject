@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Quiz Login</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+                
+        <link rel="stylesheet" href="design_files/css/style.css">
+
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-storage.js"></script>
+        <script src="js/index.js"></script>
+
+    </head>
+    <body>
+        <div class="wrapper" >
+            <div class="inner">
+                <div class="image-holder">
+                    <img src="design_files/images/login.png">
+                </div>
+
+                <form action="">
+                    <h3>Log In</h3>
+                    <div class="form-wrapper">
+                        <input id="email" placeholder="Enter Email" type="email" class="form-control">
+                    </div>
+                    <div class="form-wrapper">
+                        <input id="password" type="password" placeholder="Enter Password" class="form-control">
+                    </div>
+                   
+                    <div class="form-group container-login100-form-btn">
+                        <button onclick="login()" type="button">
+                            Login
+                            <i class="zmdi zmdi zmdi-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div>
+                        <div class="w-full text-center p-t-27 p-b-239"></div>
+                        <span class="text-muted">
+                            Forget
+                        </span>
+                        <a href="forgetPassword.html" class="text-dark">
+                            Forget Password?
+                        </a>
+                    </div>
+
+                    <div>
+                        <a href="signup.html" class="text-dark" style="margin-top: 66%; font-size: 15px">
+                            Not Have an Account? Sign up Now
+                        </a>
+                    </div>
+                </form>
+            </div>
+            </div>
+
+  
+    </body>
+</html>

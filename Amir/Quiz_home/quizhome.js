@@ -27,6 +27,7 @@ $(document).ready(function () {
   $("#C").click(function (e) {
     var id = this.id;
     clickEvent(id);
+    alert(id);
     e.preventDefault();
   });
 
