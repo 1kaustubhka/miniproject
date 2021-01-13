@@ -24,37 +24,55 @@ $(document).ready(() => {
 
     $("section").load('categories.html',()=>{
 
-        var cat ="C#";
-        var cid = cat+"_testsets";
-        $('section').append(`
-        <div class="col-lg-6 col-sm-12 gy-1">
-                    <div class="card">
-                        <img src="../images/c++.png" class="card-img-top" alt="===">
-                        <div class="card-body">
-                            <h5 class="card-title">${cat}</h5>
-                            <p class="card-text">Test Your Knowledge On ${cat}</p>
-                            <button  id=${cid} class="btn btn-light crdbtn">Take Test</button>
-                        </div>
-                    </div>
-                </div>`);
-                alert(cid);
-        $("#c_testsets").click(()=>{
-            alert("c test");
+        $.ajax({
+            url: "http://localhost:3000/Category/",
+            type: "GET",
+            dataType: "json",
+            contentType: "application/json",
+            success: (cat) => {
+    
+                for (let i = 0; i < cat.length; i++) {
+                    var ct = cat[i]['id'].toString();
+                    console.log(ct);
+                    var cid = ct + "_testsets";
+                    //alert(cid);
+                    $('section').append(`
+                <div class="col-lg-6 col-sm-12 gy-1">
+                            <div class="card">
+                                <img src="../images/c++.png" class="card-img-top" alt="===">
+                                <div class="card-body">
+                                    <h5 class="card-title">${ct}</h5>
+                                    <p class="card-text">Test Your Knowledge On ${ct}</p>
+                                    <button  id=${cid} class="btn btn-light crdbtn">Take Test</button>
+                                </div>
+                            </div>
+                        </div>`);
+    
+                }
+    
+            
+            },
+    
+        });
+        $(document).on("click", (".crdbtn"), (function(){
+            alert(this.id);
             $("section").load('categoriestestset.html');
         })
-        $("#c++_testsets").click(()=>{
-            $("section").load('categoriestestset.html');
-        })
-        $("#java_testsets").click(()=>{
-            $("section").load('categoriestestset.html');
-        })
-        $("#html_testsets").click(()=>{
-            $("section").load('categoriestestset.html');
-        })
-        $(document).on("click",(".crdbtn"),(()=>{
-            $("section").load('categoriestestset.html');
-        })
-    );
+        );
+    
+        // $("#c_testsets").click(()=>{
+        //     alert("c test");
+        //     $("section").load('categoriestestset.html');
+        // })
+        // $("#c++_testsets").click(()=>{
+        //     $("section").load('categoriestestset.html');
+        // })
+        // $("#java_testsets").click(()=>{
+        //     $("section").load('categoriestestset.html');
+        // })
+        // $("#html_testsets").click(()=>{
+        //     $("section").load('categoriestestset.html');
+        // })
 });
 
 
