@@ -3,9 +3,17 @@ $(document).ready(() => {
     localStorage.setItem("theme", th);
     $("nav").load('nav_bar.html', () => {//navbar jquery comes here
         $("#profile").click(() => {
-//_____________________________________________________________
+            //_____________________________________________________________
             $("section").load('profile.html', () => {//profile jquery
-               
+                $.ajax({
+                    url: "",
+                    method: "GET",
+                    dataType: 'json',
+                    success: function (x) {
+                        
+
+                    }
+                });
             });
         })
         $("#home").click(() => {
