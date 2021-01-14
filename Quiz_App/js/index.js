@@ -1,5 +1,6 @@
 $(document).ready(() => {
 
+    var selectedcat;
     var th = 0;
     localStorage.setItem("theme", th);
     $("nav").load('nav_bar.html', () => {//navbar jquery comes here
@@ -51,7 +52,7 @@ $(document).ready(() => {
             });
             $(document).on("click", (".crdbtn"), (function(){
                 alert(this.id);
-                $("section").load('categoriestestset.html');
+                $("section").load('user_testset_table.html');
             })
             );
         })
@@ -91,7 +92,48 @@ $(document).ready(() => {
         });
         $(document).on("click", (".crdbtn"), (function(){
             alert(this.id);
-            $("section").load('categoriestestset.html');
+            $("section").load('user_testset_table.html',()=>{
+                var ct = "C";
+                $.ajax({
+                    url: "http://localhost:3000/Category/"+ct,
+                    type: "GET",
+                    dataType: "json",
+                    contentType: "application/json",
+                    success: (cat) => {
+                     
+                     console.log(Object.keys(cat).length);
+                     //console.log(JSON.stringify(cat['questionset2']))
+                        // cat.forEach(element => {
+                        //    console.log(element) 
+                        // });
+                     let i = 1;
+                   
+                     for(i=1;i<Object.keys(cat).length;i++)
+                     {
+                        var tid = "testsets" + i;
+                           
+                        // alert(i);
+                                 // alert tid);
+                                 $("tbody").append(
+                                   `<tr><th scope="row">` +
+                                     `${i}` +
+                                     `</th><td>` +
+                                    `TestSet ${i}`+
+                                     `</td><td></td>` +
+                                     `<td ><button id=${tid} class="testsets btn btn-primary">Take Test</button></td>`
+                                 );  
+                     }
+                      
+                      
+                        $(document).on("click", ".testsets", function () {
+                            alert(this.id);
+                        });
+                    },
+                    error:(e)=>{
+                        alert(e);
+                    }
+               });
+            });
         })
         );
     

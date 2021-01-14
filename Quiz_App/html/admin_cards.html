@@ -10,8 +10,9 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"/>
     
-    <link rel="stylesheet" href="../css/admin_cards.css"/>
+    <link rel="stylesheet" href="admin_cards.css"/>
 
+    <script defer src="./admincards.js"></script>
     <title>Admin Dashboard</title>
   </head>
 
@@ -25,6 +26,7 @@
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
+    <script src="./jquery-3.5.1.js"></script>
 
     <nav class="nav_bar">
       <ul class="nav flex-column">
@@ -39,12 +41,15 @@
       </ul>
     </nav>
 
-    <section>
-      <div class="container" id="card-one">
+    <section class="container-fluid">
+      <div class="section row"  >
+
+      </div>
+      <!-- <div class="container" id="card-one"> 
         <div class="row gx-5 gy-5">
           <div class="col-lg-6 col-sm-12">
             <div class="card">
-              <img src="../images/Frame 1c.png" class="card-img-top" alt="===" />
+              <img src="Frame 1c.png" class="card-img-top" alt="===" />
               <div class="card-body">
                 <h5 class="card-title">C Language</h5>
                 <p class="card-text">Perform Crud Operations.</p>
@@ -57,7 +62,7 @@
 
           <div class="col-lg-6 col-sm-12" id="card-two">
             <div class="card">
-              <img src="../images/Frame 1c++.png" class="card-img-top" alt="===" />
+              <img src="Frame 1c++.png" class="card-img-top" alt="===" />
               <div class="card-body">
                 <h5 class="card-title">C++ Language</h5>
                 <p class="card-text">Perform Crud Operations.</p>
@@ -70,7 +75,7 @@
         <div class="row gx-5 gy-5" id="card-three">
           <div class="col-lg-6 col-sm-12">
             <div class="card">
-              <img src="../images/Frame 1java.png" class="card-img-top" alt="===" />
+              <img src="Frame 1java.png" class="card-img-top" alt="===" />
               <div class="card-body">
                 <h5 class="card-title">Java Language</h5>
                 <p class="card-text">Perform Crud Operations.</p>
@@ -81,7 +86,7 @@
 
           <div class="col-lg-6 col-sm-12" id="card-four">
             <div class="card">
-              <img src="../images/Frame 1html5.png" class="card-img-top" alt="===" />
+              <img src="Frame 1html5.png" class="card-img-top" alt="===" />
               <div class="card-body">
                 <h5 class="card-title">HTML Language</h5>
                 <p class="card-text">Perform Crud Operations.</p>
@@ -90,6 +95,7 @@
             </div>
           </div>
         </div>
+        -->
         <div class="category-button" id="category-button">
             <a href="one.html" class="btn btn-warning">Add new Test Category</a>
           </div>
