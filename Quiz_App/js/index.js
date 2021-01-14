@@ -3,6 +3,7 @@ $(document).ready(() => {
     var selectedcat;
     var th = 0;
     localStorage.setItem("theme", th);
+    $("header").load('header.html');
     $("nav").load('nav_bar.html', () => {//navbar jquery comes here
      //PROFILE BUTTON  
         $("#profile").click(() => {
