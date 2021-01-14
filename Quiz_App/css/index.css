@@ -4,11 +4,29 @@ html,body{
     overflow: hidden; 
 }
 
-header{
-    height: 15%;
-    color:#e0e1dd;
-    /*background-color: #e0e1dd;*/
-    
+.header{
+  height: 8%; 
+  background-color: lightblue;
+  color: black;
+  width: 100%;
+  text-align: center;
+  /* display: flex; */
+}
+.dashboard{
+  width: 80%;
+}
+.logo{
+  height: 100%;
+  width: 5%;
+  float: left;
+}
+
+.logout{
+  float: right;
+  height: 100%;
+ 
+  max-width: 10%;
+  /* background-image: url(); */
 }
 .navbar{
     /*background-color: #bdbdbd;*/
