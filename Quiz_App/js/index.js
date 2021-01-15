@@ -3,8 +3,12 @@ $(document).ready(() => {
     var selectedcat;
     var th = 0;
     localStorage.setItem("theme", th);
+    //------------------------------- loading header and footer -------------------------------------
+    $("header").load('header.html');
+    $("footer").load('footer.html');
+
     $("nav").load('nav_bar.html', () => {//navbar jquery comes here
-     //PROFILE BUTTON  
+        //PROFILE BUTTON  
         $("#profile").click(() => {
             $("section").load('profile.html', () => {//profile jquery
                 $("#profile_button").click(() => {
@@ -16,20 +20,22 @@ $(document).ready(() => {
             });
         })
 
-    //HOME BUTTON
+        //HOME BUTTON
         $("#home").click(() => {
             $("section").load('categories.html');
-            //I CAN REFRESH.
+            // ---------------------------------loading categories again-------------------------------------- 
             $.ajax({
                 url: "http://localhost:3000/Category/",
                 type: "GET",
                 dataType: "json",
                 contentType: "application/json",
                 success: (cat) => {
-        
+
                     for (let i = 0; i < cat.length; i++) {
                         var ct = cat[i]['id'].toString();
                         console.log(ct);
+
+
                         var cid = ct + "_testsets";
                         //alert(cid);
                         $('section').append(`
@@ -39,26 +45,30 @@ $(document).ready(() => {
                                     <div class="card-body">
                                         <h5 class="card-title">${ct}</h5>
                                         <p class="card-text">Test Your Knowledge On ${ct}</p>
-                                        <button  id=${cid} class="btn btn-light crdbtn">Take Test</button>
+                                        <button  id=${cid} value=${ct} class="btn btn-light crdbtn">Take Test</button>
                                     </div>
                                 </div>
                             </div>`);
-        
+
                     }
-        
-                
+
+
                 },
-        
+
             });
-            $(document).on("click", (".crdbtn"), (function(){
+
+            // -------------------------------------------------card button operation------------------------------------- 
+            $(document).on("click", (".crdbtn"), (function () {
                 alert(this.id);
+                selectedcat = this.value;
+                alert(selectedcat);
                 $("section").load('user_testset_table.html');
             })
             );
         })
     });
-
-    $("section").load('categories.html',()=>{
+// -------------------------------------------------------initial loading of categories------------------------------------------- 
+    $("section").load('categories.html', function () {
 
         $.ajax({
             url: "http://localhost:3000/Category/",
@@ -66,77 +76,82 @@ $(document).ready(() => {
             dataType: "json",
             contentType: "application/json",
             success: (cat) => {
-    
+
                 for (let i = 0; i < cat.length; i++) {
                     var ct = cat[i]['id'].toString();
                     console.log(ct);
                     var cid = ct + "_testsets";
                     //alert(cid);
+
+            // -----------------------------------------------dynamic creation of cards -------------------------------------
                     $('section').append(`
                 <div class="col-lg-6 col-sm-12 gy-1">
                             <div class="card">
-                                <img src="../images/c++.png" class="card-img-top" alt="===">
+                                <img src="../images/Frame 1${ct}.png" class="card-img-top" alt="===">
                                 <div class="card-body">
                                     <h5 class="card-title">${ct}</h5>
                                     <p class="card-text">Test Your Knowledge On ${ct}</p>
-                                    <button  id=${cid} class="btn btn-light crdbtn">Take Test</button>
+                                    <button  id=${cid} value=${ct} class="btn btn-dark crdbtn">Take Test</button>
                                 </div>
                             </div>
                         </div>`);
-    
+
                 }
-    
-            
+
+
             },
-    
+
         });
-        $(document).on("click", (".crdbtn"), (function(){
+        // -----------------------------------------------card button loading user testset table-----------------------------------
+        $(document).on("click", (".crdbtn"), (function () {
             alert(this.id);
-            $("section").load('user_testset_table.html',()=>{
-                var ct = "C";
+            selectedcat = this.value;
+            alert(selectedcat);
+            $("section").load('user_testset_table.html', () => {
+                var ct = selectedcat;
+                // ----------------------------dynamic creation of tesset table-----------------------------------------
                 $.ajax({
-                    url: "http://localhost:3000/Category/"+ct,
+                    url: "http://localhost:3000/Category/" + ct,
                     type: "GET",
                     dataType: "json",
                     contentType: "application/json",
                     success: (cat) => {
-                     
-                     console.log(Object.keys(cat).length);
-                     //console.log(JSON.stringify(cat['questionset2']))
+
+                        console.log(Object.keys(cat).length);
+                        //console.log(JSON.stringify(cat['questionset2']))
                         // cat.forEach(element => {
                         //    console.log(element) 
                         // });
-                     let i = 1;
-                   
-                     for(i=1;i<Object.keys(cat).length;i++)
-                     {
-                        var tid = "testsets" + i;
-                           
-                        // alert(i);
-                                 // alert tid);
-                                 $("tbody").append(
-                                   `<tr><th scope="row">` +
-                                     `${i}` +
-                                     `</th><td>` +
-                                    `TestSet ${i}`+
-                                     `</td><td></td>` +
-                                     `<td ><button id=${tid} class="testsets btn btn-primary">Take Test</button></td>`
-                                 );  
-                     }
-                      
-                      
+                        let i = 1;
+
+                        for (i = 1; i < Object.keys(cat).length; i++) {
+                            var tid = "testsets" + i;
+
+                            // alert(i);
+                            // alert tid);
+                            $("tbody").append(
+                                `<tr><th scope="row">` +
+                                `${i}` +
+                                `</th><td>` +
+                                `${selectedcat} TestSet ${i}` +
+                                `</td><td></td>` +
+                                `<td ><button id=${tid} class="testsets btn btn-primary">Take Test</button></td>`
+                            );
+                        }
+
+
                         $(document).on("click", ".testsets", function () {
                             alert(this.id);
                         });
                     },
-                    error:(e)=>{
+                    error: (e) => {
                         alert(e);
                     }
-               });
+                });
             });
         })
         );
-    
+
         // $("#c_testsets").click(()=>{
         //     alert("c test");
         //     $("section").load('categoriestestset.html');
@@ -150,6 +165,8 @@ $(document).ready(() => {
         // $("#html_testsets").click(()=>{
         //     $("section").load('categoriestestset.html');
         // })
+
+        // ----------------------------------------------------theme---------------------------------------------------------
         $("#theme").click(() => {
             if (th == 0) {
                 th = 1;
@@ -168,8 +185,8 @@ $(document).ready(() => {
                     "color": "#f7f7f7"
                 });
                 $(".form-label").css("color", "white");
-    
-    
+
+
             } else {
                 th = 0;
                 localStorage.setItem("theme", th);
@@ -190,11 +207,11 @@ $(document).ready(() => {
                 });
             }
         })
-});
+    });
 
 
 
-// -----------------------------------------------------------THEME CHANGE CODE----------------------------------------------------------
+    // -----------------------------------------------------------THEME CHANGE CODE----------------------------------------------------------
 
 
     // theme change
