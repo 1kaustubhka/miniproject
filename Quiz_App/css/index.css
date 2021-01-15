@@ -16,16 +16,20 @@ html,body{
   width: 80%;
 }
 .logo{
-  height: 100%;
+  /* margin: 1% 1% 0% 1%; */
+  padding-top: 0.5%;
+  padding-left: 1%;
+  height: 90%;
   width: 5%;
   float: left;
 }
 
 .logout{
   float: right;
-  height: 100%;
- 
-  max-width: 10%;
+  height: 80%;
+  margin-top: 0.5%;
+  margin-right: 0.5%;
+  max-width: 5%;
   /* background-image: url(); */
 }
 .navbar{
@@ -158,3 +162,22 @@ section
   .slider.round:before {
     border-radius: 50%;
   }
+  
+.footer {
+  position: fixed;
+  height: 8%;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: lightblue;
+  color: white;
+  text-align: center;
+}
+.logout{
+  height: 80%;
+  padding: 0.5%;
+} 
+.footer-content{
+  color: black;
+  margin:2%;
+}
