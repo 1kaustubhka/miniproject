@@ -5,58 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Bootstrap 4 Responsive Layout Example</title>
 
-<link rel="stylesheet" href="../css/LandingPage.css">
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
+<link rel="stylesheet" href="../design_files/css/LandingPage.css">
 </head>
 <body>
 <!------Navbar login signup---------------------->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light-slateGray">
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a href="#" class="nav-link"><i class="fa fa-fw fa-user"></i>Admin Login</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link"><i class="fa fa-fw fa-user"></i>User Login</a> 
-          </li>
-          <li class="nav-item">
-           <a href="#" class="nav-link"><i class="fa fa-fw fa-user-plus"></i>Register User</a> 
-          </li>
-        
-        </ul>
-      </div>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a href="../html/adminLogin.html" class="nav-link"> <i class="fa fa-fw fa-user"></i>Admin Login</a>
+        </li>
+        <li class="nav-item">
+            <a href="../html/signin.html" class="nav-link"><i class="fa fa-fw fa-user"></i>User Login</a> 
+        </li>
+        <li class="nav-item">
+            <a href="../html/signup.html" class="nav-link"><i class="fa fa-fw fa-user-plus"></i>Register User</a> 
+        </li>
+      </ul>
     </div>
   </nav>
+  
 
 
-
-
-
-
-
-
-
-
-
-
-\
-
-<!-- 
-<div class="navbar">
-    <a href="#"><i class="fa fa-fw fa-user"></i>Admin Login</a> 
-    <a href="#"><i class="fa fa-fw fa-user"></i>User Login</a> 
-    <a href="#"><i class="fa fa-fw fa-user-plus"></i>Register User</a> 
-    
-  </div> -->
 <!-------ABOUT US AND LOGO-------------------------->
    <div class="container">
        <div class="jumbotron">
@@ -79,7 +63,7 @@
                     </p>    
                 </div>
                 <div class="mainlogo logo col-md-6 col-lg-6">
-                    <img src="../images/logo1.jpg" id="img1" >
+                    <img src="../design_files/images/logo1.jpg" id="img1" >
                 </div>   
             </div>
         </div>
@@ -89,7 +73,7 @@
         <div class="row">
             <div class="logos col-md-6 col-lg-4 col-xl-3">
                 <div class="hovereffect">
-                    <img src="../images/Clogo.jfif" >
+                    <img src="../design_files/images/Clogo.jpg" >
                         <div class="overlay">
                            <div class="text"></div>
                         </div>
@@ -98,7 +82,7 @@
 
             <div class="logos col-md-6 col-lg-4 col-xl-3">
                 <div class="hovereffect">
-                     <img src="../images/C++logo.png" >
+                     <img src="../design_files/images/C++logo.png" >
                         <div class="overlay">
                            <div class="text"></div>
                         </div>
@@ -106,7 +90,7 @@
             </div>
             <div class="logos col-md-6 col-lg-4 col-xl-3">
                 <div class="hovereffect">
-                   <img src="../images/javalogo.png" >
+                   <img src="../design_files/images/javalogo.png" >
                        <div class="overlay">
                            <div class="text"></div>
                        </div>
@@ -114,7 +98,7 @@
             </div>
             <div class="logos col-md-6 col-lg-4 col-xl-3">
                 <div class="hovereffect">
-                   <img src="../images/pythonlogo.png">
+                   <img src="../design_files/images/pythonlogo.png">
                        <div class="overlay">
                           <div class="text"></div>
                        </div>
