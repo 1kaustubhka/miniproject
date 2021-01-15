@@ -22,7 +22,7 @@
     },
     {
       "id": 2,
-      "question": "Far pointer can access ",
+      "question": "Far pointer can access ",
       "option_1": "Single memory location",
       "option_2": "No memory location",
       "option_3": "All memory location",
@@ -179,7 +179,7 @@
     },
     {
       "id": 9,
-      "question": " java.util.Collections is a: ",
+      "question": " java.util.Collections is a: ",
       "option_1": "Class",
       "option_2": "Interface",
       "option_3": "Object",
@@ -196,7 +196,7 @@
       "correct_option": 1
     }
   ],
-  "C++": [
+  "CPP": [
     {
       "id": 1,
       "question": "Which data type is used to create a variable that should store text?",
@@ -217,7 +217,7 @@
     },
     {
       "id": 3,
-      "question": "In C++, cout is found in which library file?",
+      "question": "In C++, cout is found in which library file?",
       "option_1": "ctype.h",
       "option_2": "stdlib.h",
       "option_3": "math.h",
@@ -226,7 +226,7 @@
     },
     {
       "id": 4,
-      "question": "The keyword endl:",
+      "question": "The keyword endl:",
       "option_1": "defines a symbolic constant",
       "option_2": "specifies that a function is to be compiled, if possible, as inline code",
       "option_3": "provides assertion testing.",
@@ -235,7 +235,7 @@
     },
     {
       "id": 5,
-      "question": "The standard identifier cin is used for:",
+      "question": "The standard identifier cin is used for:",
       "option_1": "a compiler flag.",
       "option_2": " standard output",
       "option_3": " standard input",
@@ -288,99 +288,86 @@
       "correct_option": 1
     }
   ],
-
   "Python": [
     {
       "id": 1,
       "question": "What is called when a function is defined inside a class? ",
-      "option_1": "A. Module",
-      "option_2": "B. Class",
-      "option_3": "C. Another Function",
-      "option_4": "D. Method",
+      "option_1": "Module",
+      "option_2": "Class",
+      "option_3": "Another Function",
+      "option_4": "Method",
       "correct_option": 4
     },
     {
       "id": 2,
       "question": "Which of the following is the use of id() function in python? ",
-      "option_1": "A. Id returns the identity of the object",
-      "option_2": "B. Every object doesn’t have a unique id",
-      "option_3": "C. All of the mentioned",
-      "option_4": "D. None of the mentioned",
+      "option_1": "Id returns the identity of the object",
+      "option_2": "Every object doesn’t have a unique id",
+      "option_3": "All of the mentioned",
+      "option_4": "None of the mentioned",
       "correct_option": 1
     },
     {
       "id": 3,
       "question": "time.time() returns ________ ",
-      "option_1": "A. the current time",
-      "option_2": "B. the current time in milliseconds",
-      "option_3": "C. the current time in milliseconds since midnight",
-      "option_4": "D. the current time in milliseconds since midnight, January 1, 1970 GMT (the Unix time)",
+      "option_1": "the current time",
+      "option_2": "the current time in milliseconds",
+      "option_3": "the current time in milliseconds since midnight",
+      "option_4": "the current time in milliseconds since midnight, January 1, 1970 GMT (the Unix time)",
       "correct_option": 4
     },
     {
       "id": 4,
       "question": "Suppose list1 is [3, 4, 5, 20, 5, 25, 1, 3], what is list1 after list1.pop(1)?",
-      "option_1": "A. [3, 4, 5, 20, 5, 25, 1, 3]",
-      "option_2": "B. [1, 3, 3, 4, 5, 5, 20, 25] ",
-      "option_3": "C. [3, 5, 20, 5, 25, 1, 3]",
-      "option_4": "D. [1, 3, 4, 5, 20, 5, 25]",
+      "option_1": "[3, 4, 5, 20, 5, 25, 1, 3]",
+      "option_2": "[1, 3, 3, 4, 5, 5, 20, 25]",
+      "option_3": "[3, 5, 20, 5, 25, 1, 3]",
+      "option_4": "[1, 3, 4, 5, 20, 5, 25]",
       "correct_option": 3
     },
     {
       "id": 5,
       "question": "Which of the following operators has the highest precedence?",
-      "option_1": "A. not",
-      "option_2": "B. &",
-      "option_3": "C.  *",
-      "option_4": "D.  +",
+      "option_1": "not",
+      "option_2": "&",
+      "option_3": "*",
+      "option_4": "+",
       "correct_option": 3
     },
-
     {
       "id": 6,
-      "question": " I want to generate a random secure hex token of 32 bytes to reset the password, which method should I use",
-      "option_1": "A. secrets.hexToken(32)",
-      "option_2": "B. secrets.hex_token(32)",
-      "option_3": "C. secrets.tokenHex(32)",
-      "option_4": "D. secrets.token_hex(32)",
+      "question": " I want to generate a random secure hex token of 32 bytes to reset the password, which method should I use",
+      "option_1": "secrets.hexToken(32)",
+      "option_2": "secrets.hex_token(32)",
+      "option_3": "secrets.tokenHex(32)",
+      "option_4": "secrets.token_hex(32)",
       "correct_option": 4
     },
-
     {
       "id": 7,
-      "question": " To generate a random secure Universally unique ID which method should I use ",
-      "option_1": "A. uuid.uuid4()",
-      "option_2": "B. uuid.uuid1()",
-      "option_3": "C .uuid.uuid3()",
-      "option_4": "D.  random.uuid()",
+      "question": "To generate a random secure Universally unique ID which method should I use ",
+      "option_1": "uuid.uuid4()",
+      "option_2": "uuid.uuid1()",
+      "option_3": "uuid.uuid3()",
+      "option_4": "random.uuid()",
       "correct_option": 1
     },
-
     {
       "id": 8,
-      "question": "What is the output of  print(abs(-45.300))",
-      "option_1": "A. 45.3",
-      "option_2": "B. -45.3",
-      "option_3": "C.  -45.300",
-      "option_4": "D. 45.300",
+      "question": "What is the output of  print(abs(-45.300))",
+      "option_1": "45.3",
+      "option_2": "-45.3",
+      "option_3": "-45.300",
+      "option_4": "45.300",
       "correct_option": 1
-    },
-    {
-      "id": 9,
-      "question": "Which of the following statement prints hello\\example\test.txt?",
-      "option_1": "print(“hello\\example\test.txt",
-      "option_2": "print(“hello\\example\\test.txt”)",
-      "option_3": "print(“hello\\”example\\”test.txt”)",
-      "option_4": "print(“hello”\\example”\test.txt”)",
-      "correct_option": 4
     },
     {
       "id": 10,
       "question": "The format function, when applied on a string returns ___________",
-      "option_1": "A. Error",
-      "option_2": "B. int",
-      "option_3": "C. bool",
-      "option_4": "D. str",
+      "option_1": "Error",
+      "option_2": "int",
+      "option_3": "bool",
+      "option_4": "str",
       "correct_option": 2
     }
   ]
