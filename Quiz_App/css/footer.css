@@ -1,0 +1,19 @@
+
+.footer {
+    position: fixed;
+    height: 8%;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: lightblue;
+    color: white;
+    text-align: center;
+ }
+.logout{
+    height: 80%;
+    padding: 0.5%;
+} 
+.footer-content{
+    color: black;
+    margin:2%;
+}
