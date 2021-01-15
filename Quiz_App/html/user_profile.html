@@ -10,13 +10,12 @@
         integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
 
 
-    <link rel="stylesheet" href="../design_files/css/style.css">
+    <link rel="stylesheet" href="/design_files/css/style.css">
 
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
-    <script src="../js/login.js"></script>
 
 </head>
 
@@ -24,11 +23,11 @@
     <div class="wrapper" )>
         <div class="inner">
             <div class="image-holder">
-                <img src="../design_files/images/login.png">
+                <img src="/design_files/images/login.png">
             </div>
 
             <form action="">
-                <h3>Register Now</h3>
+                <h3>Update Profile</h3>
                 <br>
                 <br>
                  <div class="form-wrapper">
@@ -40,19 +39,15 @@
                 <div class="form-wrapper">
                     <input id="contact" placeholder="Enter Your Contact No." type="tel" class="form-control">
                 </div>
-                <div class="form-wrapper">
-                    <input id="password" type="password" placeholder="Password" class="form-control">
-                </div>
-
 
                 <div class="form-group container-login100-form-btn">
-                    <button onclick="register()" type="button">
-                        Register
+                    <button onclick="update()" type="button">
+                        Update Profile
                     </button>
                 </div>
                 <div>
                     <div class="w-full text-center" style="margin-top:49%; font-size: 15px"></div>
-                    <a href="../html/signin.html" class="text-dark">
+                    <a href="/html/signin.html" class="text-dark">
                         Already Have An Account?
                     </a>
                 </div>
@@ -60,7 +55,7 @@
         </div>
     </div>
 
-    
+    <script src="/js/index.js"></script>
 
 </body>
 
