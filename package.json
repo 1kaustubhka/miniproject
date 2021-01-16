@@ -1,6 +1,6 @@
 {
   "author": "WeAreAthlon <hello@weareathlon.com> (https://www.weareathlon.com)",
-  "name": "@weareathlon/frontend-webpack-boilerplate",
+  "name": "http-server",
   "version": "5.2.1",
   "description": "Starter project template boilerplate based on Webpack with SASS/PostCSS and babel ES6/7 support.",
   "homepage": "https://github.com/WeAreAthlon/frontend-webpack-boilerplate#readme",
@@ -13,13 +13,12 @@
     "email": "plamen@athlonsofia.com"
   },
   "contributors": [
-    {
-      "name": "Plamen Nikolov",
-      "email": "me@pnikoloff.com",
-      "url": "https://pnikoloff.com"
-    }
+    "Plamen Nikolov <me@pnikoloff.com> (https://pnikoloff.com)"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "http-server": "^0.12.3",
+    "json-server": "^0.16.3"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
@@ -70,7 +69,7 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git@github.com:WeAreAthlon/frontend-webpack-boilerplate.git"
+    "url": "git+ssh://git@github.com/WeAreAthlon/frontend-webpack-boilerplate.git"
   },
   "scripts": {
     "build": "webpack --config configuration/webpack.dev.config.js --mode=development",
@@ -82,5 +81,6 @@
     "lint:js": "eslint --ext .js src/js/",
     "stats": "webpack --config configuration/webpack.prod.config.js --mode=production --json > dist/stats.json && webpack-bundle-analyzer dist/stats.json"
   },
-  "target": "web"
+  "target": "web",
+  "main": "postcss.config.js"
 }

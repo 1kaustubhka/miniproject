@@ -9,19 +9,12 @@ $(document).ready(()=>{
         success: (cat) => {
          
          console.log(Object.keys(cat).length);
-         //console.log(JSON.stringify(cat['questionset2']))
-            // cat.forEach(element => {
-            //    console.log(element) 
-            // });
          let i = 1;
        
          for(i=1;i<Object.keys(cat).length;i++)
          {
             var eid = "edit" + i;
             var did = "del" + i;
-               
-            // alert(i);
-                     // alert(eid);
                      $("tbody").append(
                        `<tr><th scope="row">` +
                          `${i}` +

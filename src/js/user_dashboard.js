@@ -138,8 +138,6 @@ $(document).ready(() => {
                                 `<td ><button id=${tid} class="testsets btn btn-primary">Take Test</button></td>`
                             );
                         }
-
-
                         $(document).on("click", ".testsets", function () {
                             alert(this.id);
                         });
@@ -151,97 +149,5 @@ $(document).ready(() => {
             });
         })
         );
-
-        // $("#c_testsets").click(()=>{
-        //     alert("c test");
-        //     $("section").load('categoriestestset.html');
-        // })
-        // $("#c++_testsets").click(()=>{
-        //     $("section").load('categoriestestset.html');
-        // })
-        // $("#java_testsets").click(()=>{
-        //     $("section").load('categoriestestset.html');
-        // })
-        // $("#html_testsets").click(()=>{
-        //     $("section").load('categoriestestset.html');
-        // })
-
-        // ----------------------------------------------------theme---------------------------------------------------------
-        $("#theme").click(() => {
-            if (th == 0) {
-                th = 1;
-                localStorage.setItem("theme", th);
-                $("header").css("background-color", "#282828");
-                $("nav").css("background-color", "#282828");
-                $("section").css("background-color", "#282828");
-                $("header").css("color", "white");
-                $(".card").css({
-                    "background-color": "#282828",
-                    "color": "white",
-                    "border": "2px black gray"
-                });
-                $("button").css({
-                    "background-color": "#292b2c",
-                    "color": "#f7f7f7"
-                });
-                $(".form-label").css("color", "white");
-
-
-            } else {
-                th = 0;
-                localStorage.setItem("theme", th);
-                $("header").css("background-color", "white");
-                $("nav").css("background-color", "white");
-                $("section").css("background-color", "white");
-                $("header").css("color", "black");
-                $(".card").css({
-                    "background-color": "white",
-                    "color": "black",
-                    "border": "2px black gray"
-                });
-                // $(".crdbtn").addClass("btn btn-light");
-                $(".form-label").css("color", "black");
-                $("button").css({
-                    "background-color": "#f7f7f7",
-                    "color": "#292b2c"
-                });
-            }
-        })
     });
-
-
-
-    // -----------------------------------------------------------THEME CHANGE CODE----------------------------------------------------------
-
-
-    // theme change
-    $("#theme").click(() => {
-        $("button").toggleClass("btn btn-dark");
-        $(".crdbtn").toggleClass("btn btn-dark");
-        if (th == 0) {
-
-            th = 1;
-            $("header").css("background-color", "black");
-            $("nav").css("background-color", "black");
-            $("section").css("background-color", "black");
-            $("header").css("color", "white");
-            $(".card").css({
-                "background-color": "black",
-                "color": "white",
-                "border": "2px white solid"
-            });
-
-        } else {
-            th = 0;
-            $("header").css("background-color", "white");
-            $("nav").css("background-color", "white");
-            $("section").css("background-color", "white");
-            $("header").css("color", "black");
-            $(".card").css({
-                "background-color": "white",
-                "color": "black"
-            });
-        }
-    })
-
 })
