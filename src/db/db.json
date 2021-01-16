@@ -48,19 +48,33 @@
   "Category": [
     {
       "id": 1,
-      "cat": "C"
+      "cat": "C",
+      "url": "https://nareshit.com/wp-content/uploads/2018/08/C-Programming-online-training-nareshit.jpg"
     },
     {
-      "id": 1,
-      "cat": "CPP"
+      "id": 2,
+      "cat": "CPP",
+      "url": "https://miro.medium.com/max/700/1*mDKusLBkGKBWW4aycK4PCA.png"
     },
     {
-      "id": 1,
-      "cat": "Java"
+      "id": 3,
+      "cat": "Java",
+      "url": "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/125946999/original/30e6d59c51c5e96279ae766598accaaac18c0285/java-programming-beginner-tutorial-and-coding-basics.jpg"
     },
     {
-      "id": 1,
-      "cat": "Python"
+      "id": 4,
+      "cat": "Python",
+      "url": "https://robots.net/wp-content/uploads/2019/11/Lozingle_10032014-1280x720.jpg"
+    },
+    {
+      "cat": "Kotlin",
+      "url": "https://codehexz.com/wp-content/uploads/2019/10/Kotlin-for-Android-O-Development-From-Beginner-to-Advanced-Free-Udemy-Course.png",
+      "id": 5
+    },
+    {
+      "cat": "Ruby on Rails",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Ruby_On_Rails_Logo.svg/1920px-Ruby_On_Rails_Logo.svg.png",
+      "id": 6
     }
   ],
   "C": [
