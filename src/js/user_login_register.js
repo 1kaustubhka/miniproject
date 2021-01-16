@@ -77,6 +77,32 @@ function register() {
       // ..
     });
 
+    $.ajax({
+      url: "http://localhost:3000/user",
+      type: "POST",
+      data : {
+        name : uname,
+        email : uemail,
+        password : upassword,
+        contact : ucontact
+      },
+      success: function () {
+        alert("written");
+      }
+    });  
+
+    $.ajax({
+      url: "http://localhost:3000/abc@gmail.com" ,
+      type: "POST",
+      data: JSON.stringify(1),
+      success: function () {
+        alert("written");
+      },
+      error: function(e){
+        alert(e);
+      }
+    });  
+
 }
 
 

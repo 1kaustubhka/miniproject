@@ -9,10 +9,8 @@
   "user": [
     {
       "id": 1,
-      "name": "Neeraj",
       "email": "xyz@gmail.com",
-      "password": "abc#1",
-      "contact": "1234567899"
+      "password": "abc#1"
     },
     {
       "id": 2,
@@ -23,13 +21,6 @@
       "id": 3,
       "email": "xyz3@gmail.com",
       "password": "abc#123"
-    },
-    {
-      "name": "Neeraj Nehra",
-      "email": "neeraj@gmail.com",
-      "password": "123@345",
-      "contact": "12345",
-      "id": 4
     }
   ],
   "xyz@gmail.com": [
@@ -48,14 +39,24 @@
   ],
   "C": [
     {
+      "id": 1,
+      "question": "Prototype of a function means _ ?",
+      "option_1": "Name of Function",
+      "option_2": "Output of Function",
+      "option_3": "Declaration of Function",
+      "option_4": "Input of a Function",
+      "correct_option": 3,
+      "marks": 2
+    },
+    {
       "id": 2,
       "question": "Far pointer can access ",
       "option_1": "Single memory location",
       "option_2": "No memory location",
       "option_3": "All memory location",
       "option_4": "First and Last Memory Address",
-      "correct_option": "3",
-      "marks": "2"
+      "correct_option": 3,
+      "marks": 2
     },
     {
       "id": 3,
@@ -120,6 +121,15 @@
       "option_3": " .i",
       "option_4": ".asm",
       "correct_option": 3
+    },
+    {
+      "id": 10,
+      "question": "Which compilation unit is responsible for adding header files content in the source code?",
+      "option_1": "Linker",
+      "option_2": "Compiler",
+      "option_3": "Assembler",
+      "option_4": "Preprocessor",
+      "correct_option": 4
     }
   ],
   "JAVA": [
