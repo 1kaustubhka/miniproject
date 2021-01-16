@@ -44,6 +44,8 @@ $(document).ready(() => {
       });
     },
   });
+  
+  //Start of Function to add the questions
   $("#addQuestion").click(function (e) {
     alert("ajax call");
     $.ajax({
@@ -64,16 +66,12 @@ $(document).ready(() => {
     });
     e.preventDefault();
   });
+  
+  //End of Function to add the questions
 });
 
-//Start of Function to add the questions
-
-//End of Function to add the questions
 
 //Start of Function to update the questions
-
-//End of Function to update the questions
-
 $(document).on("click", ".edit", function () {
   id = parseInt(this.id.substr(4));
   console.log(id);
@@ -113,6 +111,9 @@ $(document).on("click", "#updateQuestion", function () {
   });
 });
 
+//End of Function to update the questions
+
+//Start of Function to delete the questions
 $(document).on("click", ".del", function () {
   id = parseInt(this.id.substr(3));
   $.ajax({
@@ -123,3 +124,4 @@ $(document).on("click", ".del", function () {
     },
   });
 });
+//End of Function to delete the questions

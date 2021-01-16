@@ -1,49 +1,12 @@
 {
   "admin": [
     {
-      "id": 1,
-      "email": "admin@gmail.com",
-      "password": "admin#123"
-    }
-  ],
-  "user": [
-    {
-      "id": 1,
-      "name": "Neeraj",
-      "email": "xyz@gmail.com",
-      "password": "abc#1",
-      "contact": "1234567899"
+      "id": "admin",
+      "pass": "The"
     },
     {
-      "id": 2,
-      "email": "xyz2@gmail.com",
-      "password": "abc#12"
-    },
-    {
-      "id": 3,
-      "email": "xyz3@gmail.com",
-      "password": "abc#123"
-    },
-    {
-      "name": "Neeraj Nehra",
-      "email": "neeraj@gmail.com",
-      "password": "123@345",
-      "contact": "12345",
-      "id": 4
-    }
-  ],
-  "xyz@gmail.com": [
-    {
-      "id": 1,
-      "category": "",
-      "score": "",
-      "date": ""
-    },
-    {
-      "id": 2,
-      "category": "pqr",
-      "score": 10,
-      "date": "8/1/2021"
+      "id": "neeraj",
+      "pass": "admin"
     }
   ],
   "C": [
@@ -371,22 +334,18 @@
       "correct_option": 1
     },
     {
-      "id": 8,
-      "question": "What is the output of  print(abs(-45.300))",
-      "option_1": "45.3",
-      "option_2": "-45.3",
-      "option_3": "-45.300",
-      "option_4": "45.300",
-      "correct_option": 1
+      "name": "rama rama",
+      "email": "sshrreivam@gmail.com",
+      "password": "Shivam@25",
+      "phone": "9827364565",
+      "id": 16
     },
     {
-      "id": 10,
-      "question": "The format function, when applied on a string returns ___________",
-      "option_1": "Error",
-      "option_2": "int",
-      "option_3": "bool",
-      "option_4": "str",
-      "correct_option": 2
+      "name": "Shivam",
+      "email": "sshivam@gmail.com",
+      "password": "Shivam@25",
+      "phone": "9827364565",
+      "id": 17
     }
   ]
 }
