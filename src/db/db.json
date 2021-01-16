@@ -1,15 +1,79 @@
 {
   "admin": [
     {
-      "id": "admin",
-      "pass": "The"
+      "id": 1,
+      "email": "admin@gmail.com",
+      "password": "admin#123"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "name": "Neeraj",
+      "email": "xyz@gmail.com",
+      "password": "abc#1",
+      "contact": "1234567899"
     },
     {
-      "id": "neeraj",
-      "pass": "admin"
+      "id": 2,
+      "email": "xyz2@gmail.com",
+      "password": "abc#12"
+    },
+    {
+      "id": 3,
+      "email": "xyz3@gmail.com",
+      "password": "abc#123"
+    }
+  ],
+  "xyz@gmail.com": [
+    {
+      "id": 1,
+      "category": "C",
+      "score": "5",
+      "date": "1/1/2021"
+    },
+    {
+      "id": 2,
+      "category": "CPP",
+      "score": 10,
+      "date": "8/1/2021"
+    },
+    {
+      "id": 2,
+      "category": "CPP",
+      "score": 7,
+      "date": "9/1/2021"
+    }
+  ],
+  "Category": [
+    {
+      "id": 1,
+      "cat": "C"
+    },
+    {
+      "id": 1,
+      "cat": "CPP"
+    },
+    {
+      "id": 1,
+      "cat": "Java"
+    },
+    {
+      "id": 1,
+      "cat": "Python"
     }
   ],
   "C": [
+    {
+      "id": 1,
+      "question": "Prototype of a function means _ ?",
+      "option_1": "Name of Function",
+      "option_2": "Output of Function",
+      "option_3": "Declaration of Function",
+      "option_4": "Input of a Function",
+      "correct_option": 3,
+      "marks": 2
+    },
     {
       "id": 2,
       "question": "Far pointer can access ",
@@ -17,8 +81,8 @@
       "option_2": "No memory location",
       "option_3": "All memory location",
       "option_4": "First and Last Memory Address",
-      "correct_option": "3",
-      "marks": "2"
+      "correct_option": 3,
+      "marks": 2
     },
     {
       "id": 3,
@@ -83,6 +147,15 @@
       "option_3": " .i",
       "option_4": ".asm",
       "correct_option": 3
+    },
+    {
+      "id": 10,
+      "question": "Which compilation unit is responsible for adding header files content in the source code?",
+      "option_1": "Linker",
+      "option_2": "Compiler",
+      "option_3": "Assembler",
+      "option_4": "Preprocessor",
+      "correct_option": 4
     }
   ],
   "JAVA": [
@@ -334,18 +407,22 @@
       "correct_option": 1
     },
     {
-      "name": "rama rama",
-      "email": "sshrreivam@gmail.com",
-      "password": "Shivam@25",
-      "phone": "9827364565",
-      "id": 16
+      "id": 8,
+      "question": "What is the output of  print(abs(-45.300))",
+      "option_1": "45.3",
+      "option_2": "-45.3",
+      "option_3": "-45.300",
+      "option_4": "45.300",
+      "correct_option": 1
     },
     {
-      "name": "Shivam",
-      "email": "sshivam@gmail.com",
-      "password": "Shivam@25",
-      "phone": "9827364565",
-      "id": 17
+      "id": 10,
+      "question": "The format function, when applied on a string returns ___________",
+      "option_1": "Error",
+      "option_2": "int",
+      "option_3": "bool",
+      "option_4": "str",
+      "correct_option": 2
     }
   ]
 }

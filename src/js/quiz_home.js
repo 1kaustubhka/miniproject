@@ -10,9 +10,8 @@ var t;
 var questions = [];
 
 $(document).ready(function () {
-
   var cat = window.location.search.split("?")[1].split("=")[1];
-console.log(cat)
+  console.log(cat);
   $(".preButton").attr("disabled", true);
   $(".flag").click(function (e) {
     $(`button#${currentQuestion + 1}.navButton`).css(
@@ -27,7 +26,7 @@ console.log(cat)
 
   $("#submit").click(function (e) {
     if ($("#submit").text() === "Close") {
-      window.open("www.google.com");
+      window.open("user_dashboard.html", "_self");
     }
     currentQuestion = 0;
     $(".question").text("");
@@ -37,49 +36,19 @@ console.log(cat)
     $(".submit").hide();
     // $(document).find(".nextButton").text("Play Again?");
     $(".nextButton").hide();
-    let val = displayScore();
-    console.log(val);
-    if (val === true) {
-      viewResults();
-    } else {
-    //  e.preventDefault();
-    }
+    viewResults();
   });
 
   clickEvent(cat);
-  // $("#js").click(function (e) {
-  //   var id = this.id;
-  //   clickEvent(id);
-  //   $(".quizContainer").show();
-  //   e.preventDefault();
-  // });
-  // $("#js").click(function (e) {
-  //   var id = this.id;
-  //   clickEvent(id);
-  //   $(".quizContainer").show();
-  //   e.preventDefault();
-  // });
-  // $("#GK").click(function (e) {
-  //   var id = this.id;
-  //   clickEvent(id);
-  //   $(".quizContainer").show();
-  //   e.preventDefault();
-  // });
-
-  // $("#C").click(function (e) {
-  //   console.log(this);
-  //   var id = this.id;
-  //   console.log(id)
-  //   clickEvent(id);
-  //   e.preventDefault();
-  // });
 
   $(document).on("click", ".quizContainer > .choiceList ", function () {
     // console.log("click li");
+
     var val = $("input[type='radio']:checked").val();
     if (val == questions[currentQuestion].correct_option) {
       correctAnswers++;
     }
+
     console.log("val" + val);
     iSelectedAnswer[currentQuestion] = val;
   });
@@ -87,11 +56,11 @@ console.log(cat)
   function clickEvent(id) {
     $.ajax({
       method: "GET",
-      url: "http://localhost:3000/"+cat,
+      url: "http://localhost:3000/" + cat,
       success: function (res) {
-          console.log(id);
-          console.log(res)
-          res.forEach((items) => {
+        console.log(id);
+        console.log(res);
+        res.forEach((items) => {
           // console.log("items" + JSON.stringify(items));
           questions.push(items);
           //  console.log(questions);
@@ -222,7 +191,16 @@ function timedCount() {
   }
 
   if ($("#submit").text() === "Close") {
-    $("#timer").hide();
+    $("#timer").text(correctAnswers + " / 10");
+    if (correctAnswers <= 3) {
+      $("#timer").css("color", "red");
+    } else if (correctAnswers > 3 && correctAnswers <= 7) {
+      $("#timer").css("color", "orange");
+    } else {
+      $("#timer").css("color", "green");
+    }
+
+    // $("#timer").attr("font-size","30px")
   } else {
     c = c - 1;
   }
@@ -272,10 +250,7 @@ function displayCurrentQuestion(currentQuestion) {
 }
 
 function displayScore() {
-  let r = confirm(
-    "You scored: " + correctAnswers + " out of: " + questions.length
-  );
-  return r;
+  alert("You scored: " + correctAnswers + " out of: " + questions.length);
 }
 
 function hideScore() {
