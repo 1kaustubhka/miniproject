@@ -1,66 +1,39 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
-    <title>User Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="../js/user_login_register.js"></script>
+  <link rel="stylesheet" href="../css/user_login.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="../css/style.css">
-
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-storage.js"></script>
-    <script src="../js/login.js"></script>
-
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="inner">
-            <div class="image-holder">
-                <img src="../images/login.png">
-            </div>
 
-            <form action="">
-                <h3>User Log In</h3>
-                <div class="form-wrapper">
-                    <input id="email" placeholder="Enter Email" type="email" class="form-control">
-                </div>
-                <div class="form-wrapper">
-                    <input id="password" type="password" placeholder="Enter Password" class="form-control">
-                </div>
+    <h2>Login Here</h2><br>    
+    <div class="login">    
+    <form id="login" >    
+        <label><b>User Name     
+        </b>    
+        </label>    
+        <input type="email" class="form-control" id="email1" required placeholder="abc@gmail.com"
+        pattern="^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">    
+        <br><br>    
+        <label><b>Password     
+        </b>    
+        </label>    
+        <input type="password" class="form-control" placeholder="Password" required id="pass1"
+        pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$">
 
-                <div class="form-group container-login100-form-btn">
-                    <button onclick="login()" type="button">
-                        Login
-                    </button>
-                </div>
-                <div>
-                    <div class="w-full text-center p-t-27 p-b-239"></div>
-                    <span class="text-muted">
-                        Forget
-                    </span>
-                    <a href="../html/forgetPassword.html" class="text-dark">
-                        Forget Password?
-                    </a>
-                </div>
+         <button type="submit" id="but1" class="btn btn-primary btn-block">Login</button>
 
-                <div>
-                    <a href="../html/signup.html" class="text-dark" style="margin-top: 66%; font-size: 15px">
-                        Not Have an Account? Sign up Now
-                    </a>
-                </div>
-            </form>
-        </div>
-    </div>
-
-
+    </form>  
+    
 </body>
 
 </html>

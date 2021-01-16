@@ -9,6 +9,17 @@
       "pass": "admin"
     }
   ],
+
+  "users": [
+    {
+      "name": "rama rama",
+      "email": "sshrreivam@gmail.com",
+      "password": "Shivam@25",
+      "phone": "9827364565",
+      "id": 16
+    }
+  ],
+
   "C": [
     {
       "id": 1,
