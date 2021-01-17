@@ -1,11 +1,11 @@
 body{
-  background-image: url("/src/images/back.jpg");
+  background-image: url("/src/images/bg.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   margin: 2%;
   background-repeat: no-repeat;
   background-size: cover;
-
+overflow: hidden;
 }
 
 .jumbotron{
@@ -68,16 +68,12 @@ padding-top: 40px;
   width:100%;
   height:100%;
   overflow:hidden;
-  position:relative;
   text-align:center;
-  cursor:default;
-  border-radius: 3px;
   }
   
   .hovereffect .overlay {
   width:100%;
   height:100%;
-  position:absolute;
   overflow:hidden;
   top:0;
   left:0;

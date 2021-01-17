@@ -75,6 +75,16 @@
       "cat": "Ruby on Rails",
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Ruby_On_Rails_Logo.svg/1920px-Ruby_On_Rails_Logo.svg.png",
       "id": 6
+    },
+    {
+      "cat": "android",
+      "url": "",
+      "id": 7
+    },
+    {
+      "cat": "",
+      "url": "",
+      "id": 8
     }
   ],
   "C": [
@@ -170,6 +180,24 @@
       "option_3": "Assembler",
       "option_4": "Preprocessor",
       "correct_option": 4
+    },
+    {
+      "question": "yify",
+      "option_1": "op1",
+      "option_2": "asd",
+      "option_3": "asd",
+      "option_4": "4",
+      "marks": "4",
+      "id": 11
+    },
+    {
+      "question": "asd",
+      "option_1": "op1",
+      "option_2": "asd",
+      "option_3": "2",
+      "option_4": "op4",
+      "marks": "4",
+      "id": 12
     }
   ],
   "JAVA": [

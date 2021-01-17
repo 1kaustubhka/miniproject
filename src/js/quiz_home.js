@@ -1,56 +1,52 @@
 var currentQuestion = 0;
-
 var correctAnswers = 0;
 var quizOver = false;
 var iSelectedAnswer = [];
 var qlength = 0;
-var c = 600;
+var c = 900;
 var t;
+var flagValue = false;
 
 var questions = [];
 
 $(document).ready(function () {
   var cat = window.location.search.split("?")[1].split("=")[1];
-  console.log(cat);
   $(".preButton").attr("disabled", true);
   $(".flag").click(function (e) {
+    flagValue = true;
     $(`button#${currentQuestion + 1}.navButton`).css(
       "background-color",
       "	#CD5C5C"
     );
-
     e.preventDefault();
   });
 
-  //
-
-  $("#submit").click(function (e) {
-    if ($("#submit").text() === "Close") {
-      window.open("user_dashboard.html", "_self");
+  $("#submit").click(function () {
+    var checkConfirm = confirm("Do you want to submit?");
+    if(checkConfirm == true){
+      if ($("#submit").text() === "Close") 
+        window.open("user_dashboard.html", "_self");
+      
+      currentQuestion = 0;
+      c = 600;
+      $(".question").text("");
+      $(".choiceList").hide();
+      $(".preButton").prop("disabled", false);
+      $(".submit").hide();
+      $(".nextButton").hide();
+      viewResults();
     }
-    currentQuestion = 0;
-    $(".question").text("");
-    $(".choiceList").hide();
-    c = 600;
-    $(".preButton").prop("disabled", false);
-    $(".submit").hide();
-    // $(document).find(".nextButton").text("Play Again?");
-    $(".nextButton").hide();
-    viewResults();
   });
 
   clickEvent(cat);
 
   $(document).on("click", ".quizContainer > .choiceList ", function () {
-    // console.log("click li");
-
-    var val = $("input[type='radio']:checked").val();
-    if (val == questions[currentQuestion].correct_option) {
+    var checkedOption = $("input[type='radio']:checked").val();
+    if (checkedOption == questions[currentQuestion].correct_option) {
       correctAnswers++;
     }
-
-    console.log("val" + val);
-    iSelectedAnswer[currentQuestion] = val;
+    iSelectedAnswer[currentQuestion] = checkedOption;
+    $("input[type='radio']:checked").prop('checked',true);
   });
 
   function clickEvent(id) {
@@ -84,6 +80,13 @@ $(document).ready(function () {
     console.log(currentQuestion);
     displayCurrentQuestion(currentQuestion - 1);
 
+    //Change the flag value.
+    if(flagValue = true){
+      flagValue = false;
+      console.log(flagValue)
+      $(`button#${currentQuestion}.navButton`).css("background-color","rgb(153, 156, 221)");
+    }
+
     if (qlength === currentQuestion + 1) {
       $(document).find(".nextButton").attr("disabled", true);
       console.log(disabled);
@@ -98,28 +101,23 @@ $(document).ready(function () {
   timedCount();
   hideScore();
 
-  $(this)
-    .find(".preButton")
-    .on("click", function () {
+  $(this).find(".preButton").on("click", function () {
       if (!quizOver) {
-        if (currentQuestion == 0) {
+        if (currentQuestion == 0)
           return false;
-        }
 
-        if (currentQuestion == 1) {
+        if (currentQuestion == 1) 
           $(".preButton").attr("disabled", "disabled");
-        }
-        if (currentQuestion + 2 != qlength) {
+
+        if (currentQuestion + 2 != qlength) 
           $(".nextButton").prop("disabled", false);
-        }
 
         currentQuestion--; // Since we have already displayed the first question on DOM ready
-        if (currentQuestion < questions.length) {
-          displayCurrentQuestion(currentQuestion);
-        }
+        if (currentQuestion < questions.length) 
+          displayCurrentQuestion(currentQuestion);   
       }
-    });
-
+  });
+ 
   // On clicking next, display the next question
   $(this)
     .find(".nextButton")
@@ -159,27 +157,21 @@ $(document).ready(function () {
 });
 
 function timedCount() {
-  if (c == 605) {
-    return false;
-  }
+  if(c == 300)
+    alert(c/60 + " minutes remaining.");
 
   var hours = parseInt(c / 3600) % 24;
   var minutes = parseInt(c / 60) % 60;
   var seconds = c % 60;
-  var result =
-    (hours < 10 ? "0" + hours : hours) +
-    ":" +
-    (minutes < 10 ? "0" + minutes : minutes) +
-    ":" +
-    (seconds < 10 ? "0" + seconds : seconds);
+  var result =(hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" +(seconds < 10 ? "0" + seconds : seconds);
   $("#timer").html(result);
 
   if (c == 0) {
+    alert("Your time is up.")
     displayScore();
     $(document).find(".preButton").text("View Answer");
     $(".preButton").prop("disabled", false);
     $(".submit").hide();
-    // $(document).find(".nextButton").text("Play Again?");
     $(".nextButton").hide();
     $("#iTimeShow").html("Quiz Time Completed!");
     $(".question").hide();
@@ -191,19 +183,9 @@ function timedCount() {
   }
 
   if ($("#submit").text() === "Close") {
+    $("#timer").hide();
     $("#timer").text(correctAnswers + " / 10");
-    if (correctAnswers <= 3) {
-      $("#timer").css("color", "red");
-    } else if (correctAnswers > 3 && correctAnswers <= 7) {
-      $("#timer").css("color", "orange");
-    } else {
-      $("#timer").css("color", "green");
-    }
-
-    // $("#timer").attr("font-size","30px")
-  } else {
-    c = c - 1;
-  }
+    
   t = setTimeout(function () {
     timedCount();
   }, 1000);
@@ -211,16 +193,10 @@ function timedCount() {
 
 // This displays the current question AND the choices
 function displayCurrentQuestion(currentQuestion) {
-  console.log(
-    "display current question called" +
-      currentQuestion +
-      " " +
-      questions[currentQuestion].question
-  );
 
   var question = questions[currentQuestion].question;
   let qnum = currentQuestion + 1;
-
+  var selectedOption = iSelectedAnswer[currentQuestion];
   var questionClass = $(document).find(".quizContainer > .question");
   $(questionClass).text(qnum + ".  " + question);
   var choiceList = $(document).find(".quizContainer > .choiceList");
@@ -238,14 +214,28 @@ function displayCurrentQuestion(currentQuestion) {
   choice1.push(option_4);
 
   for (var i = 0; i < 4; i++) {
-    $(
-      '<li><input type="radio" class="radio-inline" value=' +
-        (i + 1) +
-        ' name="dynradio" />' +
-        " " +
-        choice1[i] +
-        "</li>"
-    ).appendTo(choiceList);
+   
+    if(i==selectedOption-1)
+    {
+      $(
+        '<li><input type="radio" class="radio-inline" value=' +
+          (i + 1) +
+          ' name="dynradio" checked/>' +
+          " " +
+          choice1[i] +
+          "</li>"
+      ).appendTo(choiceList);
+    }
+    else{
+      $(
+        '<li><input type="radio" class="radio-inline" value=' +
+          (i + 1) +
+          ' name="dynradio" />' +
+          " " +
+          choice1[i] +
+          "</li>"
+      ).appendTo(choiceList);
+    }
   }
 }
 
@@ -291,8 +281,6 @@ function viewResults() {
       "<div>" + question + '</div><ul id="result_ul" style="list-style:none;">'
     );
     for (var i = 0; i < 4; i++) {
-      //  console.log("choice[i]" + choice[i]);
-
       if (iSelectedAnswer[currentQuestion] == i + 1) {
         if (questions[currentQuestion].correct_option == i + 1) {
           $(".question").append(

@@ -51,7 +51,7 @@ $(document).ready(() => {
   $("#addQuestion").click(function (e) {
     alert("ajax call");
     $.ajax({
-      url: "http://localhost:3000/C",
+      url: "http://localhost:3000/"+cat,
       type: "POST",
       data: {
         question: $("#question").val(),
@@ -65,6 +65,9 @@ $(document).ready(() => {
       success: function () {
         alert("written");
       },
+      error:(e)=>{
+          alert("error"+e.error);
+      }
     });
     e.preventDefault();
   });
