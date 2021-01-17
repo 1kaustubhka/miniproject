@@ -1,0 +1,86 @@
+//colors
+$white: white;
+
+
+body {
+	height: 100%;
+}
+.container {
+	width: 900px;
+	height: 800px;
+	background-color: $white;
+	margin-top: 5%;
+	margin-bottom: 10%;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+header {
+	margin-top: 1%;
+	font-size: 200%;
+	text-align: center;
+	text-emphasis: bold;
+}
+.card {
+	width: 300px;
+	padding: 3%;
+	padding-top: 5%;
+	margin-top: 7%;
+	margin-bottom: 5%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+img {
+	width: 20%;
+	height: 20%;
+}
+nav {
+	margin-top: 5%;
+	height: 100%;
+	float: left;
+	width: 15%;
+	margin-left: 1%;
+}
+.fa-plus-circle {
+	font-size: 1000%;
+	&:before {
+		content: "\f055";
+	}
+}
+* {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	align-items: center;
+}
+::after {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	align-items: center;
+}
+::before {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	align-items: center;
+}
+.nav-item {
+	width: 70%;
+	margin-top: 3%;
+	margin-left: 2%;
+	padding: 5%;
+	height: 20%;
+	font-size: medium;
+	border: 10px round solid;
+	&:hover {
+		width: 100%;
+	}
+}
+.category-button {
+	text-align: center;
+	margin-right: auto;
+}
+.nav_bar {
+	height: 100%;
+}
+button {
+	margin-right: 20px;
+	margin-left: 20px;
+}

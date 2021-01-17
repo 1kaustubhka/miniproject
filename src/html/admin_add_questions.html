@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Add Questions</title>
+
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -14,20 +15,22 @@
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
+
+    <!-- script for css and js file -->
     <link rel="stylesheet" href="../css/admin_add_questions.css" />
     <script src="../js/admin_add_questions.js"></script>
-    <!-- <script src="storage.js"></script> -->
   </head>
+
   <body>
-    <!-- Div for adding the new questions and options-->
+    <!-- Div for adding the new question-->
     <div class="row">
       <div class="col-75">
         <div class="container">
           <form>
-            <h3 class="text-center">Add a Question</h3>
+            <h3 class="text-center" font-style="bold">Add Question Here!</h3>
             <div class="row">
               <div class="col-50">
-                <label for="fname"><i class="fa fa-user"></i> Question</label>
+                <label for="fname"><i class="fa fa-user"></i> Question:</label>
                 <input
                   type="text"
                   id="question"
@@ -38,9 +41,10 @@
               </div>
             </div>
 
+            <!-- Div to add options -->
             <div class="row">
               <div class="col-50">
-                <label for="fname"><i class="fa fa-user"></i> Option 1</label>
+                <label for="fname"><i class="fa fa-user"></i> Option 1:</label>
                 <input
                   type="text"
                   id="option1"
@@ -49,7 +53,7 @@
                   required
                 />
                 <label for="email"
-                  ><i class="fa fa-envelope"></i> Option 2</label
+                  ><i class="fa fa-envelope"></i> Option 2:</label
                 >
                 <input
                   type="text"
@@ -59,7 +63,7 @@
                   required
                 />
                 <label for="email"
-                  ><i class="fa fa-envelope"></i> Answer
+                  ><i class="fa fa-envelope"></i> Correct Answer:
                 </label>
                 <input
                   type="text"
@@ -77,7 +81,7 @@
               </div>
 
               <div class="col-50">
-                <label for="fname"><i class="fa fa-user"></i> Option 3</label>
+                <label for="fname"><i class="fa fa-user"></i> Option 3:</label>
                 <input
                   type="text"
                   id="option3"
@@ -86,7 +90,7 @@
                   required
                 />
                 <label for="email"
-                  ><i class="fa fa-envelope"></i> Option 4</label
+                  ><i class="fa fa-envelope"></i> Option 4:</label
                 >
                 <input
                   type="text"
@@ -95,7 +99,8 @@
                   placeholder="Option"
                   required
                 />
-                <label for="email"><i class="fa fa-envelope"></i> Marks</label>
+                <label for="email"><i class="fa fa-envelope"></i> Marks Assigned:</label>
+                
                 <input
                   type="text"
                   id="marks"
@@ -111,6 +116,7 @@
       </div>
     </div>
 
+
     <!-- Modal for updating a question-->
     <div class="container">
       <!-- Modal -->
@@ -119,7 +125,7 @@
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">
+              <button type="button btn-warning" class="close" data-dismiss="modal">
                 &times;
               </button>
             </div>
@@ -128,12 +134,12 @@
                 <div class="col-75">
                   <div class="container">
                     <form>
-                      <h3 class="text-center">Update a Question</h3>
+                      <h3 class="text-center">Update a Question:</h3>
 
                       <div class="row">
                         <div class="col-50">
                           <label for="fname"
-                            ><i class="fa fa-user"></i> Question</label
+                            ><i class="fa fa-user"></i> Question:</label
                           >
                           <input
                             type="text"
@@ -146,7 +152,7 @@
                       <div class="row">
                         <div class="col-50">
                           <label for="fname"
-                            ><i class="fa fa-user"></i> Option 1</label
+                            ><i class="fa fa-user"></i> Option 1:</label
                           >
                           <input
                             type="text"
@@ -155,7 +161,7 @@
                             placeholder="Option"
                           />
                           <label for="email"
-                            ><i class="fa fa-envelope"></i> Option 2</label
+                            ><i class="fa fa-envelope"></i> Option 2:</label
                           >
                           <input
                             type="text"
@@ -164,7 +170,7 @@
                             placeholder="Option"
                           />
                           <label for="email"
-                            ><i class="fa fa-envelope"></i> Answer
+                            ><i class="fa fa-envelope"></i> Answer:
                           </label>
                           <input
                             type="text"
@@ -182,7 +188,7 @@
 
                         <div class="col-50">
                           <label for="fname"
-                            ><i class="fa fa-user"></i> Option 3</label
+                            ><i class="fa fa-user"></i> Option 3:</label
                           >
                           <input
                             type="text"
@@ -191,7 +197,7 @@
                             placeholder="Option"
                           />
                           <label for="email"
-                            ><i class="fa fa-envelope"></i> Option 4</label
+                            ><i class="fa fa-envelope"></i> Option 4:</label
                           >
                           <input
                             type="text"
@@ -200,7 +206,7 @@
                             placeholder="Option"
                           />
                           <label for="email"
-                            ><i class="fa fa-envelope"></i> Marks</label
+                            ><i class="fa fa-envelope"></i> Marks:</label
                           >
                           <input
                             type="text"
@@ -234,7 +240,7 @@
     <br />
 
     <!-- Table to print the added questions.-->
-    <table id="questions">
+    <table class="questions">
       <tr>
         <td>Sr.No</td>
         <td>Question</td>
