@@ -13,66 +13,42 @@ background-color: lightblue;
 color: black;
 width: 100%;
 text-align: center;
-/* display: flex; */
 }
 .dashboard{
 width: 80%;
 }
 .logo{
-/* margin: 1% 1% 0% 1%; */
 padding-top: 0.5%;
 padding-left: 1%;
 height: 90%;
 width: 5%;
 float: left;
 }
-
 .logout{
 float: right;
 height: 80%;
 margin-top: 0.5%;
 margin-right: 0.5%;
 max-width: 5%;
-/* background-image: url(); */
 }
 .navbar{
-  /*background-color: #bdbdbd;*/
   height: 100%;
   float: left;
-  width: 15%;
- 
+  width: 15%; 
 }
-
-
 .nav-item{
   width: 75%;
   margin-top: 5%;
   padding: 10%;
   height: 50%;
   font-size: large;
- 
 }
 
 .nav-item:hover{
-  /* background-color:aquamarine ; */
   width: 100%;
-  
 }
-
-/* button{
-   background-color: #616161; 
- 
-  border-radius: 25%;
- 
-   color: #e0e1dd; 
-  width: 100%;
-} */
-
-
-
 section
 {
-  /* background-color:#bdbdbd; */
   color: #616161;
   width: 85%;
   float: left;

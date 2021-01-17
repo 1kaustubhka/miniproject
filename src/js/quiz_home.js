@@ -1,16 +1,15 @@
 var currentQuestion = 0;
-
-var correctAnswers = 0;
+var correctAnswers = 0; // total marks
 var quizOver = false;
 var iSelectedAnswer = [];
-var qlength = 0;
-var c = 600;
+var qlength = 0; //question length
+var c = 600; //timer
 var t;
-
+var cat;
 var questions = [];
 
 $(document).ready(function () {
-  var cat = window.location.search.split("?")[1].split("=")[1];
+  cat = window.location.search.split("?")[1].split("=")[1];
   console.log(cat);
   $(".preButton").attr("disabled", true);
   $(".flag").click(function (e) {
@@ -120,7 +119,7 @@ $(document).ready(function () {
       }
     });
 
-  // On clicking next, display the next question
+  // --------------------------------------On clicking next, display the next question----------------------------------------
   $(this)
     .find(".nextButton")
     .on("click", function () {
@@ -264,17 +263,17 @@ function viewResults() {
   $(".preButton").hide();
   $(".nextButton").hide();
   $("#submit").text("Close");
-  console.log("c  " + c);
+  // console.log("c  " + c);
 
-  if (currentQuestion == 10) {
-    currentQuestion = 0;
-    return false;
-  }
+  // if (currentQuestion == 10) {
+  //   currentQuestion = 0;
+  //   return false;
+  // }
 
   $(".question").show();
   hideScore();
 
-  console.log("qlength" + qlength);
+  // console.log("qlength" + qlength);
   for (var j = 0; j < qlength; j++) {
     var question = questions[currentQuestion].question;
     choice = [];
@@ -311,9 +310,10 @@ function viewResults() {
           );
         }
       } else {
+        console.log("in else");
         if (questions[currentQuestion].correct_option == i + 1) {
           $(".question").append(
-            '<li style="border:2px solid green;margin-top:10px;">' +
+            '<li style="border:2px solid green ;margin-top:10px; background-color:lightgray">' +
               " " +
               choice[i] +
               "</li>"
@@ -335,3 +335,50 @@ function navButtons() {
     $(".questionNav").append(`<button class="navButton" id=${i}>${i}</button`);
   }
 }
+
+$(document).on("click", ".close", function (e) {
+  alert("close called")
+  var email = sessionStorage.getItem("userid");
+
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, "0");
+  var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+  var yyyy = today.getFullYear();
+  today = dd + "/" + mm + "/" + yyyy;
+
+  email = "xyz@gmail.com";
+
+  $.ajax({
+    method: "GET",
+    url: "http://localhost:3000/user",
+    async: false,
+    success: function (result) {
+      result.forEach(function (userData) {
+        if (email === userData.email) {
+          var $categoryData = JSON.parse(userData.category);
+
+          if ($categoryData[cat] == undefined) {
+            $categoryData[cat] = [];
+          }
+
+          $categoryData[cat][$categoryData[cat].length] = {
+            score: correctAnswers,
+            date: today,
+          };
+          userData["category"] = JSON.stringify($categoryData);
+          e.preventDefault();
+          $.ajax({
+            method: "PUT",
+            async: false,
+            url: "http://localhost:3000/user/" + userData.id,
+            data: userData,
+          });
+        }
+      });
+    },
+    complete: () => {
+      window.open("user_dashboard.html", "_self");
+    },
+  });
+  e.preventDefault();
+});
