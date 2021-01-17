@@ -19,20 +19,98 @@ $(document).ready(() => {
                 })
             });
         })
+        $("#performance").click(() => {
+            var userid = sessionStorage.getItem("userid");
+            // ---------------------------------------------------dymaically adding buttons-----------------------------------------------------------
+            $("section").load('performance.html', () => {
+                var ctx = document.getElementById('myChart').getContext('2d');
+                var chart;
+                $.ajax({
+                    url: "http://localhost:3000/Category/",
+                    type: "GET",
+                    dataType: "json",
+                    contentType: "application/json",
+                    success: (dt) => {
+
+                        for (let i = 0; i < dt.length; i++) {
+                            var ct = dt[i].cat.toString();
+                            console.log(ct);
+                            $('.canvas-btn').append(`<button id="${ct}_performance" value="${ct}" class="performanceBtn btn btn-dark">${ct}</button>`);
+
+                        }
+                    }
+
+                });
+                
+                $(document).on("click", (".performanceBtn"), (function () {
+                    // alert(this.id);
+                    let graphBtn = this.value;
+                    $.ajax({
+                        url: "http://localhost:3000/xyz@gmail.com/",
+                        type: "GET",
+                        success: (x) => {
+                            var label = [];
+                            var marks = [];
+
+                            x.forEach(element => {
+                                if(element.category == graphBtn){
+                                    console.log(element.date);
+                                    label.push(element.date),
+                                    marks.push(element.score)
+                                    console.log(element.score);
+                                }
+                                
+                            });
+                            chart = new Chart(ctx, {
+                                // The type of chart we want to create
+                                type: 'bar',
+
+                                // The data for our dataset
+                                data: {
+
+                                    labels: label,
+                                    datasets: [{
+                                        label: 'Previous performance',
+                                        data: marks
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        yAxes: [{
+                                            ticks: {
+                                                beginAtZero: true
+                                            }
+                                        }]
+                                    }
+                                }
+                            })
+                        }
+                    })
+                })
+                );
+
+
+
+
+
+
+            });
+
+        })
 
         //HOME BUTTON
         $("#home").click(() => {
-            $("section").load('categories.html');
+            $("section").load('user_categories.html');
             // ---------------------------------loading categories again-------------------------------------- 
             $.ajax({
                 url: "http://localhost:3000/Category/",
                 type: "GET",
                 dataType: "json",
                 contentType: "application/json",
-                success: (cat) => {
+                success: (dt) => {
 
-                    for (let i = 0; i < cat.length; i++) {
-                        var ct = cat[i]['id'].toString();
+                    for (let i = 0; i < dt.length; i++) {
+                        var ct = dt[i].cat.toString();
                         console.log(ct);
 
 
@@ -60,30 +138,31 @@ $(document).ready(() => {
             // -------------------------------------------------card button operation------------------------------------- 
             $(document).on("click", (".crdbtn"), (function () {
                 alert(this.id);
+
                 selectedcat = this.value;
-                alert(selectedcat);
-                $("section").load('user_testset_table.html');
+                window.open(`quiz_home.html?cat=${selectedcat}`);
+
             })
             );
         })
     });
-// -------------------------------------------------------initial loading of categories------------------------------------------- 
-    $("section").load('categories.html', function () {
+    // -------------------------------------------------------initial loading of categories------------------------------------------- 
+    $("section").load('user_categories.html', function () {
 
         $.ajax({
             url: "http://localhost:3000/Category/",
             type: "GET",
             dataType: "json",
             contentType: "application/json",
-            success: (cat) => {
+            success: (dt) => {
 
-                for (let i = 0; i < cat.length; i++) {
-                    var ct = cat[i]['id'].toString();
+                for (let i = 0; i < dt.length; i++) {
+                    var ct = dt[i].cat.toString();
                     console.log(ct);
                     var cid = ct + "_testsets";
                     //alert(cid);
 
-            // -----------------------------------------------dynamic creation of cards -------------------------------------
+                    // -----------------------------------------------dynamic creation of cards -------------------------------------
                     $('section').append(`
                 <div class="col-lg-6 col-sm-12 gy-1">
                             <div class="card">
@@ -91,7 +170,7 @@ $(document).ready(() => {
                                 <div class="card-body">
                                     <h5 class="card-title">${ct}</h5>
                                     <p class="card-text">Test Your Knowledge On ${ct}</p>
-                                    <button  id=${cid} value=${ct} class="btn btn-dark crdbtn">Take Test</button>
+                                    <button  id=${cid} value=${ct} class="btn btn-dark crdbtn" href="quiz_home.html">Take Test</button>
                                 </div>
                             </div>
                         </div>`);
@@ -106,48 +185,10 @@ $(document).ready(() => {
         $(document).on("click", (".crdbtn"), (function () {
             alert(this.id);
             selectedcat = this.value;
-            alert(selectedcat);
-            $("section").load('user_testset_table.html', () => {
-                var ct = selectedcat;
-                // ----------------------------dynamic creation of tesset table-----------------------------------------
-                $.ajax({
-                    url: "http://localhost:3000/Category/" + ct,
-                    type: "GET",
-                    dataType: "json",
-                    contentType: "application/json",
-                    success: (cat) => {
-
-                        console.log(Object.keys(cat).length);
-                        //console.log(JSON.stringify(cat['questionset2']))
-                        // cat.forEach(element => {
-                        //    console.log(element) 
-                        // });
-                        let i = 1;
-
-                        for (i = 1; i < Object.keys(cat).length; i++) {
-                            var tid = "testsets" + i;
-
-                            // alert(i);
-                            // alert tid);
-                            $("tbody").append(
-                                `<tr><th scope="row">` +
-                                `${i}` +
-                                `</th><td>` +
-                                `${selectedcat} TestSet ${i}` +
-                                `</td><td></td>` +
-                                `<td ><button id=${tid} class="testsets btn btn-primary">Take Test</button></td>`
-                            );
-                        }
-                        $(document).on("click", ".testsets", function () {
-                            alert(this.id);
-                        });
-                    },
-                    error: (e) => {
-                        alert(e);
-                    }
-                });
-            });
+            window.open(`quiz_home.html?cat=${selectedcat}`);
         })
         );
-    });
+    })
+    // -------------------------------------------------------PAST PERFORMANCE LOAD-------------------------------------------------------
+
 })

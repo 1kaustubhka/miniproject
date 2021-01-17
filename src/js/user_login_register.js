@@ -4,7 +4,7 @@ $(document).ready(() => {
 
   $.ajax({
       type: "GET",
-      url: "http://localhost:3000/users",
+      url: "http://localhost:3000/user",
 
       success: function (data, status, xhr) {
 
@@ -58,7 +58,7 @@ $(document).ready(() => {
 
       $.ajax({
           type: "POST",
-          url: "http://localhost:3000/users",
+          url: "http://localhost:3000/user",
           data: JSON.stringify(user),
           success: function (data, status, xhr) {
           },
@@ -82,7 +82,7 @@ $(document).ready(() => {
       else {
           $.ajax({
               type: "GET",
-              url: "http://localhost:3000/users",
+              url: "http://localhost:3000/user",
               data: { "email": email, "password": password },
               success: function (data, status, xhr) {
                   console.log(data);
