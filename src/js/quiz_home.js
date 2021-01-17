@@ -23,10 +23,10 @@ $(document).ready(function () {
 
   $("#submit").click(function () {
     var checkConfirm = confirm("Do you want to submit?");
-    if(checkConfirm == true){
-      if ($("#submit").text() === "Close") 
+    if (checkConfirm == true) {
+      if ($("#submit").text() === "Close")
         window.open("user_dashboard.html", "_self");
-      
+
       currentQuestion = 0;
       c = 600;
       $(".question").text("");
@@ -46,7 +46,7 @@ $(document).ready(function () {
       correctAnswers++;
     }
     iSelectedAnswer[currentQuestion] = checkedOption;
-    $("input[type='radio']:checked").prop('checked',true);
+    $("input[type='radio']:checked").prop("checked", true);
   });
 
   function clickEvent(id) {
@@ -81,10 +81,13 @@ $(document).ready(function () {
     displayCurrentQuestion(currentQuestion - 1);
 
     //Change the flag value.
-    if(flagValue = true){
+    if ((flagValue = true)) {
       flagValue = false;
-      console.log(flagValue)
-      $(`button#${currentQuestion}.navButton`).css("background-color","rgb(153, 156, 221)");
+      console.log(flagValue);
+      $(`button#${currentQuestion}.navButton`).css(
+        "background-color",
+        "rgb(153, 156, 221)"
+      );
     }
 
     if (qlength === currentQuestion + 1) {
@@ -101,23 +104,23 @@ $(document).ready(function () {
   timedCount();
   hideScore();
 
-  $(this).find(".preButton").on("click", function () {
+  $(this)
+    .find(".preButton")
+    .on("click", function () {
       if (!quizOver) {
-        if (currentQuestion == 0)
-          return false;
+        if (currentQuestion == 0) return false;
 
-        if (currentQuestion == 1) 
-          $(".preButton").attr("disabled", "disabled");
+        if (currentQuestion == 1) $(".preButton").attr("disabled", "disabled");
 
-        if (currentQuestion + 2 != qlength) 
+        if (currentQuestion + 2 != qlength)
           $(".nextButton").prop("disabled", false);
 
         currentQuestion--; // Since we have already displayed the first question on DOM ready
-        if (currentQuestion < questions.length) 
-          displayCurrentQuestion(currentQuestion);   
+        if (currentQuestion < questions.length)
+          displayCurrentQuestion(currentQuestion);
       }
-  });
- 
+    });
+
   // On clicking next, display the next question
   $(this)
     .find(".nextButton")
@@ -157,17 +160,21 @@ $(document).ready(function () {
 });
 
 function timedCount() {
-  if(c == 300)
-    alert(c/60 + " minutes remaining.");
+  if (c == 300) alert(c / 60 + " minutes remaining.");
 
   var hours = parseInt(c / 3600) % 24;
   var minutes = parseInt(c / 60) % 60;
   var seconds = c % 60;
-  var result =(hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" +(seconds < 10 ? "0" + seconds : seconds);
+  var result =
+    (hours < 10 ? "0" + hours : hours) +
+    ":" +
+    (minutes < 10 ? "0" + minutes : minutes) +
+    ":" +
+    (seconds < 10 ? "0" + seconds : seconds);
   $("#timer").html(result);
 
   if (c == 0) {
-    alert("Your time is up.")
+    alert("Your time is up.");
     displayScore();
     $(document).find(".preButton").text("View Answer");
     $(".preButton").prop("disabled", false);
@@ -185,141 +192,190 @@ function timedCount() {
   if ($("#submit").text() === "Close") {
     $("#timer").hide();
     $("#timer").text(correctAnswers + " / 10");
-    
-  t = setTimeout(function () {
-    timedCount();
-  }, 1000);
-}
 
-// This displays the current question AND the choices
-function displayCurrentQuestion(currentQuestion) {
-
-  var question = questions[currentQuestion].question;
-  let qnum = currentQuestion + 1;
-  var selectedOption = iSelectedAnswer[currentQuestion];
-  var questionClass = $(document).find(".quizContainer > .question");
-  $(questionClass).text(qnum + ".  " + question);
-  var choiceList = $(document).find(".quizContainer > .choiceList");
-
-  $(choiceList).find("li").remove();
-  //var choice="hii";
-  choice1 = [];
-  var option_1 = questions[currentQuestion].option_1;
-  var option_2 = questions[currentQuestion].option_2;
-  var option_3 = questions[currentQuestion].option_3;
-  var option_4 = questions[currentQuestion].option_4;
-  choice1.push(option_1);
-  choice1.push(option_2);
-  choice1.push(option_3);
-  choice1.push(option_4);
-
-  for (var i = 0; i < 4; i++) {
-   
-    if(i==selectedOption-1)
-    {
-      $(
-        '<li><input type="radio" class="radio-inline" value=' +
-          (i + 1) +
-          ' name="dynradio" checked/>' +
-          " " +
-          choice1[i] +
-          "</li>"
-      ).appendTo(choiceList);
-    }
-    else{
-      $(
-        '<li><input type="radio" class="radio-inline" value=' +
-          (i + 1) +
-          ' name="dynradio" />' +
-          " " +
-          choice1[i] +
-          "</li>"
-      ).appendTo(choiceList);
-    }
-  }
-}
-
-function displayScore() {
-  alert("You scored: " + correctAnswers + " out of: " + questions.length);
-}
-
-function hideScore() {
-  $(document).find(".result").hide();
-}
-
-// This displays the current question AND the choices
-function viewResults() {
-  $(".btns").hide();
-  $(".flag").hide();
-  $(".preButton").hide();
-  $(".nextButton").hide();
-  $("#submit").text("Close");
-  console.log("c  " + c);
-
-  if (currentQuestion == 10) {
-    currentQuestion = 0;
-    return false;
+    t = setTimeout(function () {
+      timedCount();
+    }, 1000);
   }
 
-  $(".question").show();
-  hideScore();
-
-  console.log("qlength" + qlength);
-  for (var j = 0; j < qlength; j++) {
+  // This displays the current question AND the choices
+  function displayCurrentQuestion(currentQuestion) {
     var question = questions[currentQuestion].question;
-    choice = [];
+    let qnum = currentQuestion + 1;
+    var selectedOption = iSelectedAnswer[currentQuestion];
+    var questionClass = $(document).find(".quizContainer > .question");
+    $(questionClass).text(qnum + ".  " + question);
+    var choiceList = $(document).find(".quizContainer > .choiceList");
+
+    $(choiceList).find("li").remove();
+    //var choice="hii";
+    choice1 = [];
     var option_1 = questions[currentQuestion].option_1;
     var option_2 = questions[currentQuestion].option_2;
     var option_3 = questions[currentQuestion].option_3;
     var option_4 = questions[currentQuestion].option_4;
-    choice.push(option_1);
-    choice.push(option_2);
-    choice.push(option_3);
-    choice.push(option_4);
+    choice1.push(option_1);
+    choice1.push(option_2);
+    choice1.push(option_3);
+    choice1.push(option_4);
 
-    $(".question").append(
-      "<div>" + question + '</div><ul id="result_ul" style="list-style:none;">'
-    );
     for (var i = 0; i < 4; i++) {
-      if (iSelectedAnswer[currentQuestion] == i + 1) {
-        if (questions[currentQuestion].correct_option == i + 1) {
-          $(".question").append(
-            '<li style="border:2px solid green;margin-top:10px;">' +
-              " " +
-              choice[i] +
-              "</li>"
-          );
-        } else {
-          // console.log("red")
-          $(".question").append(
-            '<li style="border:2px solid red;margin-top:10px;">' +
-              " " +
-              choice[i] +
-              "</li>"
-          );
-        }
+      if (i == selectedOption - 1) {
+        $(
+          '<li><input type="radio" class="radio-inline" value=' +
+            (i + 1) +
+            ' name="dynradio" checked/>' +
+            " " +
+            choice1[i] +
+            "</li>"
+        ).appendTo(choiceList);
       } else {
-        if (questions[currentQuestion].correct_option == i + 1) {
-          $(".question").append(
-            '<li style="border:2px solid green;margin-top:10px;">' +
-              " " +
-              choice[i] +
-              "</li>"
-          );
-        } else {
-          $(".question").append("<li>" + " " + choice[i] + "</li>");
-        }
+        $(
+          '<li><input type="radio" class="radio-inline" value=' +
+            (i + 1) +
+            ' name="dynradio" />' +
+            " " +
+            choice1[i] +
+            "</li>"
+        ).appendTo(choiceList);
       }
     }
-
-    $(".question").append("</ul><hr>");
-    currentQuestion++;
-    //console.log("incrementing.."+currentQuestion++)
   }
-}
 
-function navButtons() {
-  for (var i = 1; i < qlength + 1; i++) {
-    $(".questionNav").append(`<button class="navButton" id=${i}>${i}</button`);
+  function displayScore() {
+    alert("You scored: " + correctAnswers + " out of: " + questions.length);
   }
+
+  function hideScore() {
+    $(document).find(".result").hide();
+  }
+
+  // This displays the current question AND the choices
+  function viewResults() {
+    $(".btns").hide();
+    $(".flag").hide();
+    $(".preButton").hide();
+    $(".nextButton").hide();
+    $("#submit").text("Close");
+    // console.log("c  " + c);
+
+    // if (currentQuestion == 10) {
+    //   currentQuestion = 0;
+    //   return false;
+    // }
+
+    $(".question").show();
+    hideScore();
+
+    // console.log("qlength" + qlength);
+    for (var j = 0; j < qlength; j++) {
+      var question = questions[currentQuestion].question;
+      choice = [];
+      var option_1 = questions[currentQuestion].option_1;
+      var option_2 = questions[currentQuestion].option_2;
+      var option_3 = questions[currentQuestion].option_3;
+      var option_4 = questions[currentQuestion].option_4;
+      choice.push(option_1);
+      choice.push(option_2);
+      choice.push(option_3);
+      choice.push(option_4);
+
+      $(".question").append(
+        "<div>" +
+          question +
+          '</div><ul id="result_ul" style="list-style:none;">'
+      );
+      for (var i = 0; i < 4; i++) {
+        if (iSelectedAnswer[currentQuestion] == i + 1) {
+          if (questions[currentQuestion].correct_option == i + 1) {
+            $(".question").append(
+              '<li style="border:2px solid green;margin-top:10px;">' +
+                " " +
+                choice[i] +
+                "</li>"
+            );
+          } else {
+            // console.log("red")
+            $(".question").append(
+              '<li style="border:2px solid red;margin-top:10px;">' +
+                " " +
+                choice[i] +
+                "</li>"
+            );
+          }
+        } else {
+          console.log("in else");
+          if (questions[currentQuestion].correct_option == i + 1) {
+            $(".question").append(
+              '<li style="border:2px solid green ;margin-top:10px; background-color:lightgray">' +
+                " " +
+                choice[i] +
+                "</li>"
+            );
+          } else {
+            $(".question").append("<li>" + " " + choice[i] + "</li>");
+          }
+        }
+      }
+
+      $(".question").append("</ul><hr>");
+      currentQuestion++;
+      //console.log("incrementing.."+currentQuestion++)
+    }
+  }
+
+  function navButtons() {
+    for (var i = 1; i < qlength + 1; i++) {
+      $(".questionNav").append(
+        `<button class="navButton" id=${i}>${i}</button`
+      );
+    }
+  }
+
+  $(document).on("click", ".close", function (e) {
+    alert("close called");
+    var email = sessionStorage.getItem("userid");
+
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, "0");
+    var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+    var yyyy = today.getFullYear();
+    today = dd + "/" + mm + "/" + yyyy;
+
+    email = "xyz@gmail.com";
+
+    $.ajax({
+      method: "GET",
+      url: "http://localhost:3000/user",
+      async: false,
+      success: function (result) {
+        result.forEach(function (userData) {
+          if (email === userData.email) {
+            var $categoryData = JSON.parse(userData.category);
+
+            if ($categoryData[cat] == undefined) {
+              $categoryData[cat] = [];
+            }
+
+            $categoryData[cat][$categoryData[cat].length] = {
+              score: correctAnswers,
+              date: today,
+            };
+            userData["category"] = JSON.stringify($categoryData);
+            e.preventDefault();
+            $.ajax({
+              method: "PUT",
+              async: false,
+              url: "http://localhost:3000/user/" + userData.id,
+              data: userData,
+            });
+          }
+        });
+      },
+      complete: () => {
+        window.open("user_dashboard.html", "_self");
+      },
+    });
+    e.preventDefault();
+  });
 }
