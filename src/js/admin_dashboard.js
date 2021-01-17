@@ -15,11 +15,13 @@ $(document).ready(() => {
         let did = "d" + ct;
         //alert(cid);
         $(".section").append(`
-            <div class="col-lg-6 col-sm-12 gy-1">
+            <div class="col-lg-6 col-sm-12 gy-2">
                         <div class="card">
-                            <img src="${src}" class="card-img-top" alt="===">
+                            <img src="${src}" class="card-img-top" alt="Image not found!">
                             <div class="card-body">
-                                
+                            <p id=category-name>${name}
+                            </p>
+
                                <br>
                                 <button  id=${name} class="btn btn-primary crdbtn">View</button>
                                 <button  id=${did} class="btn btn-danger del">Delete</button>
