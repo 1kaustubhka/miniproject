@@ -23,6 +23,27 @@
       "id": 3,
       "email": "xyz3@gmail.com",
       "password": "abc#123"
+    },
+    {
+      "name": "Shivam",
+      "email": "dhivam@gmail.com",
+      "password": "Shivam@25",
+      "phone": "9827364565",
+      "id": 4
+    },
+    {
+      "name": "Shivam",
+      "email": "dhivam@gmail.com",
+      "password": "Shivam@25",
+      "phone": "9827364565",
+      "id": 5
+    },
+    {
+      "name": "Shivam",
+      "email": "shivam@gmail.com",
+      "password": "Shivam@25",
+      "phone": "9827364565",
+      "id": 7
     }
   ],
   "xyz@gmail.com": [

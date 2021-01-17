@@ -16,36 +16,35 @@
 
 <body>
 
-    <h2>Register Here</h2><br>
+    <h2>Register Here</h2>
+    <br>
     <div class="login">
         <form id="register">
-            <label><b>Name
-                </b>
-            </label>
+            <center><label><b>Name</b></label></center>
             <input type="name" class="form-control" id="name" required placeholder="Name">
-            <br><br>
+            <br>
 
-            <label><b>Email
-                </b>
-            </label>
+            <center><label><b>Email</b></label></center>
             <input type="email" class="form-control" id="email" required placeholder="abc@gmail.com"
-                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-            <label><b>Password
-                </b>
-            </label>
+            pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            <span class="text-muted" id="inval"></span>
+            <br>
+
+            <center><label><b>Password</b><br></label></center>
             <input type="password" class="form-control" required placeholder="Password" id="pass"
-                pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$">
+            pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$">
+            <br>
 
-            <label><b>Confirm Password
-                </b>
-            </label>
+            <center><label><b>Confirm Password</b></label></center>
             <input type="password" class="form-control" id="cpass" required placeholder="Password"
-                pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$">
+            pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$">
+            <span id="out"></span>
 
-            <label><b>Confirm Password
-                </b>
-            </label>
+            <br>
+
+            <center><label><b>Phone Number</b></label></center>
             <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required pattern="[0-9]{10}">
+            <br>
 
             <button type="submit" id="but" class="btn btn-primary btn-block">Register</button>
         </form>
