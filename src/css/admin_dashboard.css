@@ -46,8 +46,17 @@ nav{
     margin-left: 1%;
  
 }
-
-
+ .fa-plus-circle{
+    font-size: 1000%;
+    
+}
+.fa-plus-circle:before {
+    content: "\f055";
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+    align-items: center;
+}
 .nav-item{
     width: 70%;
     height: 20%;
@@ -72,4 +81,8 @@ nav{
 
 .nav_bar{
     height: 100%;
+}
+button{
+    margin-right: 20px;
+    margin-left: 20px;
 }

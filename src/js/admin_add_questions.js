@@ -1,9 +1,11 @@
 
 $(document).ready(() => {
   //Start of Function to display questions
+  var cat = window.location.search.split("?")[1].split("=")[1];
+  console.log(cat);
   let i = 1;
   $.ajax({
-    url: "http://localhost:3000/C",
+    url: "http://localhost:3000/"+cat,
     type: "GET",
     dataType: "json",
     contentType: "application/json",

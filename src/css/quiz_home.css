@@ -1,154 +1,149 @@
 body {
-    margin: 0;
-    padding: 0;
-    /* background-color: rgb(89, 100, 255) */
-  }
-  .wrapper {
-    max-width: 80%;
-    margin: 80px auto 50px;
-    padding: 30px;
-    border-radius: 20px;
-    background: #c0e2df;
-    position: relative;
-    min-height: 400px;
-    overflow: hidden
-  }
-  h4 {
-    float: right;
-    color: #ff0000;
-    position: absolute;
-    left: 70%;
-    top: 5%;
-    
-  }
-  .quizContainer:question {
-    background-color: white;
-    width: 80%;
-    height: 50%x;
-    display: grid;
-    grid-template-rows: 60px auto;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
+  margin: 0;
+  padding: 0;
+  /* background-color: rgb(89, 100, 255) */
+}
+.wrapper {
+  max-width: 80%;
+  margin: 80px auto 50px;
+  padding: 30px;
+  border-radius: 20px;
+  background: #c0e2df;
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
+}
+h4 {
+  float: right;
+  color: #ff0000;
+  position: absolute;
+  left: 70%;
+  top: 5%;
+}
+.quizContainer:question {
+  background-color: white;
+  width: 80%;
+  height: 50%x;
+  display: grid;
+  grid-template-rows: 60px auto;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.col-sm-3 {
+  background-color: rgb(245, 244, 244);
+  padding: 6% 6%;
+  border-radius: 1%;
+}
+h1 {
+  font-family: "Poppins", sans-serif;
+}
+#timer {
+  background-color: rgb(170, 171, 179);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 25px;
+}
+.choiceList {
+  list-style-type: none;
+  margin: 30px 0px;
+  font-family: "Poppins", sans-serif;
+}
+
+.choiceList input[type="radio"]:checked {
+  transform: translate(-30%, -30%) scale(1);
+}
+.question {
+  background-color: #ecf0f1;
+  padding: 10px 30px 30px 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+.nextButton,
+.preButton,
+.flag,
+#submit {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  background-color: rgb(128, 129, 148);
+  padding: 15px 35px;
+  border-radius: 27px;
+  transition: 0.4s all;
+  right: 30%;
+}
+.nextButton:disabled,
+.preButton:disabled {
+  background-color: black;
+}
+.flag {
+  margin-left: 3%;
+}
+.preButton {
+  float: left;
+}
+.nextButton {
+  float: right;
+}
+.nextButton:hover,
+.preButton:hover {
+  color: rgb(128, 129, 148);
+  background-color: white;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* button {
+  
+  cursor: pointer;
+  color: white;
+  background-color: rgb(128, 129, 148);
+  padding: 15px 35px;
+  border-radius: 27px;
+  transition: 0.4s all;
+  float: left;
+  right: 50%;
+} */
+.navButton {
+  border: none;
+  outline: none;
+  margin: 5%;
+  color: white;
+  background-color: rgb(153, 156, 221);
+  padding: 5% 5%;
+  border-radius: 50%;
+  transition: 0.4s all;
+  float: left;
+  right: 50%;
+}
+button:hover {
+  color: rgb(128, 129, 148);
+
+  background-color: white;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+}
+.navButton:hover {
+  color: rgb(128, 129, 148);
+  background-color: rgb(102, 109, 243);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+}
+.quizContainer {
+  border: 1px solid #ff0000;
+}
+#submit {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+}
+
+@media all and (max-width: 770px) {
   .col-sm-3 {
-    background-color: rgb(245, 244, 244);
-    padding: 6% 6%;
-    border-radius: 1%;
-    
+    visibility: hidden;
   }
-  h1{
-    font-family: 'Poppins', sans-serif;
-  } 
-  #timer {
-    background-color: rgb(170, 171, 179);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    color: white;
-    font-size: 25px;
+  .submit {
+    width: 40%;
+    height: 25%;
   }
-  .choiceList {
-    list-style-type: none;
-    margin: 30px 0px;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  
-  .choiceList input[type="radio"]:checked {
-    transform: translate(-30%, -30%) scale(1)
-    
-    }
-  .question {
-    background-color: #ecf0f1;
-    padding: 10px 30px 30px 30px;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  .nextButton,
-  .preButton, .flag , #submit {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    color: white;
-    background-color: rgb(128, 129, 148);
-    padding: 15px 35px;
-    border-radius: 27px;
-    transition: 0.4s all;
-    right: 30%;
-  }
-  .nextButton:disabled,.preButton:disabled{
-    background-color: black;
-  }
-  .flag{
-    margin-left: 3%;
-  }
-  .preButton {
-    float: left;
-  }
-  .nextButton {
-    float: right;
-  }
-  .nextButton:hover,
-  .preButton:hover {
-    color: rgb(128, 129, 148);
-    background-color: white;
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* button {
-    
-    cursor: pointer;
-    color: white;
-    background-color: rgb(128, 129, 148);
-    padding: 15px 35px;
-    border-radius: 27px;
-    transition: 0.4s all;
-    float: left;
-    right: 50%;
-  } */
-  .navButton {
-    border: none;
-    outline: none;
-    margin: 5%;
-    color: white;
-    background-color: rgb(153, 156, 221);
-    padding: 5% 5%;
-    border-radius: 50%;
-    transition: 0.4s all;
-    float: left;
-    right: 50%;
-  }
-  button:hover {
-    color: rgb(128, 129, 148);
-  
-    background-color: white;
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
-  }
-  .navButton:hover {
-    color: rgb(128, 129, 148);
-    background-color: rgb(102, 109, 243);
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
-  }
-  .quizContainer {
-    border: 1px solid #ff0000;
-  }
-  #submit {
-    position: absolute;
-    right: 5%;
-    bottom: 5%;
-  }
-  
-  
-  @media all and (max-width: 770px) {
-    .col-sm-3 {
-      visibility: hidden;
-    }
-    .submit {
-      width: 40%;
-      height: 25%;
-    }
-  }
-  
-  
-  
+}
