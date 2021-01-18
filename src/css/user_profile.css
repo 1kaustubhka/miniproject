@@ -1,8 +1,13 @@
 .cngpass{
-    width: 20%;
+    width: 50%;
     
 }
 .new-pwd , .current-pwd{
-    width: 30%;
+    width: 40%;
 }
-.btn{}
+.profile {
+    float: left;
+}
+.jumbotron{
+    width: 100%;
+}

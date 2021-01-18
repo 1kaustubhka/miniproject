@@ -5,7 +5,14 @@ $(document).ready(() => {
 
   //------------------------------- loading header and footer -------------------------------------
 
-  $("header").load("header.html");
+  $("header").load("header.html",()=>{
+    $(document).on("click",".logout",()=>{
+      if (sessionStorage.getItem("email") !== null) {
+        sessionStorage.removeItem("email");
+      }
+      location.replace("../../", "_self");
+    })
+  });
   $("footer").load("footer.html");
   $("nav").load("user_navbar.html", () => {
     //---------------------------------navbar jquery comes here---------------------------------------
