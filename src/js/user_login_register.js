@@ -1,100 +1,16 @@
-$(document).ready(() => {
+$(document).ready(function () {
   var arr = new Array();
-
   $.ajax({
     type: "GET",
     url: "http://localhost:3000/user",
+    dataType: "json",
 
-    success: function (data) {
-      arr = JSON.parse(data);
-      console.log(arr);
+    success: function (response) {
+      arr =response;
+      //console.log(arr)
     },
-
-    error: function (  errorMessage) {
-      console.log("error" + errorMessage);
-    },
-    dataType: "text",
     contentType: "application/json",
-  });
-
-  //password checking
-  $('#pass,#cpass').on('keyup', function () {
-    if ($('#pass').val() === $('#cpass').val()) {
-        $('#out').html("Matching");
-        $('#out').css('color', 'green');
-        $('#but').removeAttr("disabled");
-    }
-    else {
-        $('#out').html("Not Matching");
-        $('#out').css('color', 'red');
-        $('#but').attr("disabled", "true");
-    }
-});
-
-
-  //registration form submission
-  $("#register").submit((a) => {
-    a.preventDefault();
-    let name = $("#name").val();
-    let email = $("#email").val();
-    let password = $("#pass").val();
-
-    let phone = $("#phone").val();
-    let gender = $('input[name="gender"]:checked').val();
-
-    var user = {
-      name: name,
-      email: email,
-      password: password,
-      phone: phone,
-    };
-
-    $.ajax({
-      type: "POST",
-      url: "http://localhost:3000/user",
-      data: JSON.stringify(user),
-      success: function (data, status, xhr) {},
-
-      error: function ( errorMessage) {
-        console.log("error" + errorMessage);
-      },
-      dataType: "text",
-      contentType: "application/json",
-    });
-  });
-
-  //login form submission
-  $("#login").submit((a) => {
-    a.preventDefault();
-    let email = $("#email1").val();
-    let password = $("#pass1").val();
-    if ((email == "" && password == "") || email == "" || password == "") {
-      alert("name and password is incorrect");
-    } else {
-      $.ajax({
-        type: "GET",
-        url: "http://localhost:3000/user",
-        data: { email: email, password: password },
-        success: function (data) {
-          console.log(data);
-          if (data !== "[]") {
-            window.location.replace("user_dashboard.html");
-            sessionStorage.setItem('email', JSON.stringify(email));
-
-          } else {
-            $(".text-muted").html("Wrong Email Id or Password");
-            $(".text-muted").css("color", "red");
-            alert("error");
-          }
-        },
-
-        error: function (errorMessage) {
-          console.log("error" + errorMessage);
-        },
-        dataType: "text",
-        contentType: "application/json",
-      });
-    }
+    
   });
 
   $("#email").on("keyup", function () {
@@ -112,22 +28,94 @@ $(document).ready(() => {
     }
     if (flag == 0) {
       $("#but").removeAttr("disabled");
-      $("#inval").html("Ready to go");
+      $("#inval").html("Email Is Available");
       $("#inval").css("color", "green");
     }
     if (email == "") {
       $("#but").attr("disabled", "true");
-      $("#inval").html("enter your email");
+      $("#inval").html("Please Enter Email");
       $("#inval").css("color", "red");
     }
   });
+
+  //password checking
+  $('#pass,#cpass').on('keyup', function () {
+    if ($('#pass').val() === $('#cpass').val()) {
+        $('#out').html("Matching");
+        $('#out').css('color', 'green');
+        $('#but').removeAttr("disabled");
+    }
+    else {
+        $('#out').html("Not Matching");
+        $('#out').css('color', 'red');
+        $('#but').attr("disabled", "true");
+    }
 });
 
-function logout(){
-  if(sessionStorage.getItem("email") !== null)
-  {
+  $("#login").submit(function (e) {
+    username = $("#email1").val();
+    password = $("#pass1").val();
+    $.ajax({
+      url: "http://localhost:3000/user/?email=" + username,
+      type: "GET",
+      dataType: "json",
+      contentType: "application/json",
+      success: function (data) {
+        if (data[0] != undefined) {
+          if (data[0]["password"] == password) {
+            sessionStorage.setItem("userId", data[0].id);
+            sessionStorage.setItem("Name", data[0].name);
+            location.replace("user_dashboard.html", "_self");
+          } else {
+            alert("invalid credentials");
+          }
+        } else {
+          alert("user not found");
+        }
+      },
+      error: function (e) {
+        if (e.statusText === "Not Found") {
+          alert("User not found");
+        }
+      },
+    });
+    e.preventDefault();
+  });
+
+  $("#register").submit((a) => {
+    a.preventDefault();
+    let name = $("#name").val();
+    let email = $("#email").val();
+    let password = $("#pass").val();
+
+    let phone = $("#phone").val();
+
+    $.ajax({
+      type: "POST",
+      url: "http://localhost:3000/user",
+      data: {
+        name: name,
+        email: email,
+        password: password,
+        phone: phone,
+        category: "{}",
+      },
+      success: function () {
+        window.location.replace("../../index.html");
+      },
+
+      error: function (errorMessage) {
+        console.log("error" + errorMessage);
+      },
+    });
+  });
+
+  //  admin login
+});
+
+function logout() {
+  if (sessionStorage.getItem("email") !== null) {
     sessionStorage.removeItem("email");
     location.href = "/index.html";
   }
 }
-

@@ -1,108 +1,150 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <!-- local Links -->
+    <link rel="stylesheet" href="src/css/index.css" />
     <title>Index Page</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="src/css/index.css">
-</head>
-<body>
-                                  <!-------------------Navbar login signup---------------------->
+  </head>
 
-    <nav class="navbar navbar-expand-lg navbar-light navtheme">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li>
-                   <img src="/src/images/main_lo.png" class="gotlogo">
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <button><a href="src/html/admin_login.html" class="nav-link"> <i class="fa fa-fw fa-user"></i>Admin Login</a></button>
-                </li>
-                <li class="nav-item">
-                    <button><a href="src/html/user_login.html" class="nav-link"><i class="fa fa-fw fa-user"></i>User Login</a> </button>
-                </li>
-                <li class="nav-item">
-                    <button><a href="src/html/user_register.html" class="nav-link"><i class="fa fa-fw fa-user-plus"></i>Register User</a> </button>
-                </li>
-            </ul>
-        </div>
+  <body>
+    <!-------------------Navbar login signup---------------------->
+
+    <nav class="navbar navbar-expand-md font-weight-bold">
+      <a href="../../"><img src="src/images/main_lo.png" class="hlogo" /></a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarContent"
+        aria-controls="navbarContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="src/html/admin_login.html" class="nav-link">
+              <i class="fa fa-fw fa-user"></i> Admin Login</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="src/html/user_login.html" class="nav-link"
+              ><i class="fa fa-fw fa-user"></i> User Login</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="src/html/user_register.html" class="nav-link"
+              ><i class="fa fa-fw fa-user-plus"></i> Register User</a
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
 
-<!------------------------------------------ABOUT US AND LOGO-------------------------->
+    <nav class="sidenav"></nav>
+    <hr />
+    <!------------------------------------------ABOUT US AND LOGO-------------------------->
+
     <div class="container">
-        <div class="jumbotron">
-            <div class="row">
-                <div class="col-md-6 col-lg-6">
-                    <span class="badge badge" style="background-color:cyan; font-size:1.5rem; padding-top: 2px;">ABOUT US</span>
-                    <br> 
-                    <br>      
-                 
-                    <p class="lead">This application is developed for
-                            educational purpose, allowing the users to prepare
-                            the multiple choice questions for different
-                            examinations conducted on provincial and national
-                            level. ... It shows progress feedback during
-                            quiz play, and at the end, the app also shows
-                            the result.
-                            We have successfully created high quality quiz content across
-                            a large variety of topics in 27 languages.
-                            This way Quiz Planet has become one of the most social
-                            quizzes enjoyed by millions of daily active players in over
-                            100 countries.
-                        </p>    
-                </div>
-                <!-- <div class="mainlogo logo col-md-6 col-lg-6">
-                    <iframe src="https://giphy.com/embed/xTiN0IuPQxRqzxodZm" width="480" height="320" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p></a></p>
-                </div>    -->
-            </div>     
+      <div class="jumbotron">
+        <div class="row row1">
+          <div class="col-md-6 col-lg-6">
+            <span
+              class="badge badge"
+              style="
+                background-color: yellow;
+                font-size: 1.5rem;
+                padding-top: 2px;
+              "
+              >ABOUT US</span
+            >
+            <br />
+            <br />
+
+            <p class="lead">
+              This application is developed for educational purpose, allowing
+              the users to prepare the multiple choice questions for different
+              examinations conducted on provincial and national level. ... It
+              shows progress feedback during quiz play, and at the end, the app
+              also shows the result. We have successfully created high quality
+              quiz content for all the graduates out there. This way our Quiz
+              app has become one of the most social quizzes enjoyed by millions
+              of daily active players.
+            </p>
+          </div>
+          <div class="mainlogo logo col-md-6 col-lg-6">
+            <img src="src/images/logo2.png" width="480" height="320" />
+          </div>
         </div>
+      </div>
 
-                <!-------------------------- 4 LOGOS -------------------------------->
+      <!-------------------------- 4 LOGOS -------------------------------->
 
-        <div class="row">
-            <div class="logos col-md-6 col-lg-4 col-xl-3">
-                <div class="hovereffect">
-                    <img src="src/images/pic.png" >
-                        <div class="overlay">
-                           <div class="text"></div>
-                        </div>
-                </div>
+      <div class="row row2">
+        <div class="logos col-md-6 col-lg-4 col-xl-3">
+          <div class="hovereffect">
+            <img src="src/images/pic.png" />
+            <div class="overlay">
+              <div class="text"></div>
             </div>
-            <div class="logos col-md-6 col-lg-4 col-xl-3">
-                <div class="hovereffect">
-                     <img src="src/images/c++.png" >
-                        <div class="overlay">
-                           <div class="text"></div>
-                        </div>
-                </div>
+          </div>
+        </div>
+        <div class="logos col-md-6 col-lg-4 col-xl-3">
+          <div class="hovereffect">
+            <img src="src/images/c++.png" />
+            <div class="overlay">
+              <div class="text"></div>
             </div>
-            <div class="logos col-md-6 col-lg-4 col-xl-3">
-                <div class="hovereffect">
-                   <img src="src/images/java.png" >
-                       <div class="overlay">
-                           <div class="text"></div>
-                       </div>
-                </div>
+          </div>
+        </div>
+        <div class="logos col-md-6 col-lg-4 col-xl-3">
+          <div class="hovereffect">
+            <img src="src/images/java.png" />
+            <div class="overlay">
+              <div class="text"></div>
             </div>
-            <div class="logos col-md-6 col-lg-4 col-xl-3">
-                <div class="hovereffect">
-                   <img src="src/images/python.png">
-                       <div class="overlay">
-                          <div class="text"></div>
-                       </div>
-                </div>
-            </div><hr>
-        </div><br>
+          </div>
+        </div>
+        <div class="logos col-md-6 col-lg-4 col-xl-3">
+          <div class="hovereffect">
+            <img src="src/images/python.png" />
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <br />
     </div>
-</body>
+
+    <!-- Required script tags for Bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

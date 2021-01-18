@@ -1,85 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/profile.css">
-    <title>Admin Profile</title>
-</head>
+    <!-- CDN -->
+   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
 
+    <link rel="stylesheet" href="../css/user_profile.css" />
+    <title>User Profile</title>
+  </head>
 
-<body> 
-
+  <body>
     <center>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
-
-
-    <div class="profile-container ">
-        <h2> <span class="badge bg-primary">User Profile</span></h2>
-
-        <!-- user name -->
-
-
-
-
+      <!---------------------------------------------------user name------------------------------------------------------ -->
+      <div class="profile-container">
+        <h2><span class="badge bg-primary">view your profile here</span></h2>
         <!-- for name-->
-        <div class="name">
-            <label for="exampleFormControlInput1" class="form-label">Name :</label>
+
+        <div class="jumbotron">
+          <div class="name">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Name :</label
+            >
+            <input type="text" id="user_name" disabled />
             <!-- <input type="email" class="form-control " id="admin-email" placeholder="name@example.com"> -->
-        </div><br>
-        <!-- for name-->
-        <div class="email">
-            <label for="exampleFormControlInput1" class="form-label">Email address :</label>
-            
-        </div><br>
+          </div>
+          <br />
 
+          <!-- for name-->
+          <div class="email">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Email address :</label
+            >
+            <input type="text" id="user_email" disabled />
+          </div>
+          <br />
 
-        <!-- for contact number -->
-        <div class="contact">
-            <label for="exampleFormControlInput1" class="form-label">Contact Number :</label>
-            </div><br>
-
-        <!-- for password update -->
-        <script>
-            var newpass, oldpwd;
-            oldpwd = document.getElementById('oldp').value;
-            newpass = document.getElementById('newp').value;
-            $.ajax({
-                type: "POST",
-                url: "your_service_url",
-                data: { "newpass": newpass, "oldpass": oldpwd },
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (msg) {
-                    alert("success");
-                },
-                error: function (msg) {
-                }
-            });
-        </script>
-        <div class="current-pwd">
-            <label for="current password" class="form-label">Current Password :</label>
-            <input type="password" class="form-control" id="user-pwd" placeholder="Password">
-        </div><br>
-
-        <div class="new-pwd">
+          <!-- for contact number -->
+          <div class="contact">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Contact Number :</label
+            >
+            <input type="text" id="user_contact" disabled />
+          </div>
+          <br />
+          <!-- current password -->
+          <div class="current-pwd">
+            <label for="current password" class="form-label"
+              >Current Password :</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="user_pwd"
+              placeholder="Password"
+            />
+          </div>
+          <br />
+          <!-- new password -->
+          <div class="new-pwd">
             <label for="new password" class="form-label">New Password :</label>
-            <input type="password" class="form-control" id="user-new-pwd" placeholder="Password"><br>
-            
-
+            <input
+              type="password"
+              class="form-control"
+              id="user-new-pwd"
+              placeholder="Password"
+            /><br />
+          </div>
+          <button
+            id="updatePassword"
+            class="btn btn-danger cngpass updatePassword"
+          >
+            Change Password
+          </button>
         </div>
-        <button href="" class=" btn btn-danger cngpass">Change Password </button>
-        
-
-    </div>
+      </div>
     </center>
-
-    
-</body>
-
+  </body>
 </html>

@@ -22,6 +22,39 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-md font-weight-bold">
+      <a href="../../"><img src="../images/main_lo.png" class="hlogo" /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarContent"
+        aria-controls="navbarContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fa fa-fw fa-user"></i> Admin Login</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="user_login.html" class="nav-link"
+              ><i class="fa fa-fw fa-user"></i> User Login</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="user_register.html" class="nav-link"
+              ><i class="fa fa-fw fa-user-plus"></i> Register User</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
     <!-- Div for adding the new question-->
     <div class="row">
       <div class="col-75">
@@ -36,6 +69,18 @@
                   id="question"
                   name="question"
                   placeholder="Question"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <label for="url"><i class="fa fa-user"></i> URL:</label>
+                <input
+                  type="text"
+                  id="url"
+                  name="url"
+                  placeholder="URL"
                   required
                 />
               </div>
@@ -67,7 +112,7 @@
                 </label>
                 <input
                   type="text"
-                  id="answer"
+                  id="correct"
                   name="answer"
                   placeholder="Answer"
                   required
@@ -99,8 +144,10 @@
                   placeholder="Option"
                   required
                 />
-                <label for="email"><i class="fa fa-envelope"></i> Marks Assigned:</label>
-                
+                <label for="email"
+                  ><i class="fa fa-envelope"></i> Marks Assigned:</label
+                >
+
                 <input
                   type="text"
                   id="marks"
@@ -108,6 +155,7 @@
                   placeholder="Marks"
                   required
                 />
+
                 <input type="reset" value="Reset" class="btn" />
               </div>
             </div>
@@ -116,125 +164,138 @@
       </div>
     </div>
 
-
     <!-- Modal for updating a question-->
-    <div class="container">
-      <!-- Modal -->
-      <div class="modal fade" id="updateModal">
-        <div class="modal-dialog">
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button btn-warning" class="close" data-dismiss="modal">
-                &times;
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-75">
-                  <div class="container">
-                    <form>
-                      <h3 class="text-center">Update a Question:</h3>
 
-                      <div class="row">
-                        <div class="col-50">
-                          <label for="fname"
-                            ><i class="fa fa-user"></i> Question:</label
-                          >
-                          <input
-                            type="text"
-                            id="editQuestion"
-                            name="editQuestion"
-                            placeholder="Question"
-                          />
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-50">
-                          <label for="fname"
-                            ><i class="fa fa-user"></i> Option 1:</label
-                          >
-                          <input
-                            type="text"
-                            id="editOption1"
-                            name="editOption1"
-                            placeholder="Option"
-                          />
-                          <label for="email"
-                            ><i class="fa fa-envelope"></i> Option 2:</label
-                          >
-                          <input
-                            type="text"
-                            id="editOption2"
-                            name="editOption2"
-                            placeholder="Option"
-                          />
-                          <label for="email"
-                            ><i class="fa fa-envelope"></i> Answer:
-                          </label>
-                          <input
-                            type="text"
-                            id="editAnswer"
-                            name="editAnswer"
-                            placeholder="Answer"
-                          />
-                          <input
-                            type="submit"
-                            value="Update"
-                            class="btn"
-                            id="updateQuestion"
-                          />
-                        </div>
+    <!-- Modal -->
+    <div class="modal fade" id="updateModal">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button btn-warning"
+              class="close"
+              data-dismiss="modal"
+            >
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-75">
+                <div class="container">
+                  <form>
+                    <h3 class="text-center">Update a Question:</h3>
 
-                        <div class="col-50">
-                          <label for="fname"
-                            ><i class="fa fa-user"></i> Option 3:</label
-                          >
-                          <input
-                            type="text"
-                            id="editOption3"
-                            name="editOption3"
-                            placeholder="Option"
-                          />
-                          <label for="email"
-                            ><i class="fa fa-envelope"></i> Option 4:</label
-                          >
-                          <input
-                            type="text"
-                            id="editOption4"
-                            name="editOption4"
-                            placeholder="Option"
-                          />
-                          <label for="email"
-                            ><i class="fa fa-envelope"></i> Marks:</label
-                          >
-                          <input
-                            type="text"
-                            id="editMarks"
-                            name="editMarks"
-                            placeholder="Marks"
-                          />
-                          <input type="reset" value="Reset" class="btn" />
-                        </div>
+                    <div class="row">
+                      <div class="col-50">
+                        <label for="fname"
+                          ><i class="fa fa-user"></i> Question:</label
+                        >
+                        <input
+                          type="text"
+                          id="editQuestion"
+                          name="editQuestion"
+                          placeholder="Question"
+                        />
                       </div>
-                    </form>
-                  </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-50">
+                        <label for="fname"
+                          ><i class="fa fa-user"></i> URL:</label
+                        >
+                        <input
+                          type="text"
+                          id="editurl"
+                          name="url"
+                          placeholder="url"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-50">
+                        <label for="fname"
+                          ><i class="fa fa-user"></i> Option 1:</label
+                        >
+                        <input
+                          type="text"
+                          id="editOption1"
+                          name="editOption1"
+                          placeholder="Option"
+                        />
+                        <label for="email"
+                          ><i class="fa fa-envelope"></i> Option 2:</label
+                        >
+                        <input
+                          type="text"
+                          id="editOption2"
+                          name="editOption2"
+                          placeholder="Option"
+                        />
+                        <label for="email"
+                          ><i class="fa fa-envelope"></i> Answer:
+                        </label>
+                        <input
+                          type="text"
+                          id="editAnswer"
+                          name="editAnswer"
+                          placeholder="Answer"
+                        />
+                        <input
+                          type="submit"
+                          value="Update"
+                          class="btn"
+                          id="updateQuestion"
+                        />
+                      </div>
+
+                      <div class="col-50">
+                        <label for="fname"
+                          ><i class="fa fa-user"></i> Option 3:</label
+                        >
+                        <input
+                          type="text"
+                          id="editOption3"
+                          name="editOption3"
+                          placeholder="Option"
+                        />
+                        <label for="email"
+                          ><i class="fa fa-envelope"></i> Option 4:</label
+                        >
+                        <input
+                          type="text"
+                          id="editOption4"
+                          name="editOption4"
+                          placeholder="Option"
+                        />
+                        <label for="email"
+                          ><i class="fa fa-envelope"></i> Marks:</label
+                        >
+                        <input
+                          type="text"
+                          id="editMarks"
+                          name="editMarks"
+                          placeholder="Marks"
+                        />
+                        <input type="reset" value="Reset" class="btn" />
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-default"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
           </div>
         </div>
       </div>
     </div>
+
     <br />
     <hr />
     <br />
@@ -250,6 +311,7 @@
         <td>Option 4</td>
         <td>Answer</td>
         <td>Marks</td>
+        <td>URL</td>
         <td>Edit</td>
         <td>Delete</td>
       </tr>

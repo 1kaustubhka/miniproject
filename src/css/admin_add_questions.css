@@ -95,7 +95,7 @@ label {
 }
 
 .btn {
-  background-color: rgb(97, 191, 219);
+  background-color:orange;
   color: black;
   padding: 12px;
   margin: 10px 0;
@@ -107,7 +107,7 @@ label {
 }
 
 .btn:hover {
-  background-color: #22547c;
+  background-color: rgb(206, 142, 24);
 }
 
 a {

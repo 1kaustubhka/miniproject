@@ -4,40 +4,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>  
   <script src="../js/user_login_register.js"></script>
   <link rel="stylesheet" href="../css/user_login.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script></head>
+  <title>User Login</title>
 
 <body>
-
-  <div>
-    <img src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-5--v2.png"/>
-  </div>
-
-    <h2>Login Here</h2><br>    
+  <nav class="navbar navbar-expand-md   font-weight-bold">
+    <a href="../../"><img src="../images/main_lo.png" class="hlogo" /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarContent"
+      aria-controls="navbarContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="admin_login.html" class="nav-link">
+            <i class="fa fa-fw fa-user"></i> Admin Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"
+            ><i class="fa fa-fw fa-user"></i> User Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="user_register.html" class="nav-link"
+            ><i class="fa fa-fw fa-user-plus"></i> Register User</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
     <div class="login">    
-    <form id="login" >    
-        <label><b>User Name     
-        </b>    
-        </label>    
-        <input type="email" class="form-control" id="email1" required placeholder="abc@gmail.com"
+    <form id="login" >
+      <img class="img-fluid img-responsive rounded mx-auto d-block" src="../images/user_profile_50.png">
+      <h2><b>Login Here</b></h2><br>    
+        <center><label><b>Email</b></label></center>
+        <input type="email" class="form-control" id="email1" required placeholder="yourmail@gmail.com"
         pattern="^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">    
-        <br><br>    
-        <label><b>Password     
-        </b>    
-        </label>    
-        <input type="password" class="form-control" placeholder="Password" required id="pass1"
-        pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$">
         <br>
 
-         <button type="submit" id="but1" class="btn btn-primary btn-block">Login</button>
-
-    </form>  
+        <center><label><b>Password</b></label></center>
+        <input type="password" class="form-control" placeholder="Password" required id="pass1"
+        >
+        <br>
+        <button type="submit" id="button_login"  class="btn btn-primary btn-block">Login</button>
+    </form> 
+     
     
 </body>
 

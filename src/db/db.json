@@ -4,6 +4,11 @@
       "id": 1,
       "email": "admin@gmail.com",
       "password": "admin#123"
+    },
+    {
+      "id": 2,
+      "email": "a@gmail.com",
+      "password": "123"
     }
   ],
   "user": [
@@ -16,56 +21,36 @@
       "category": "{\"C\":[{\"score\":0,\"date\":\"17/01/2021\"}],\"CPP\":[{\"score\":0,\"date\":\"17/01/2021\"}]}"
     },
     {
-      "id": 2,
-      "email": "xyz2@gmail.com",
-      "password": "abc#12",
-      "category": "{}"
+      "name": "ayush",
+      "email": "a@g.com",
+      "password": "123",
+      "phone": "1235467890",
+      "category": "{}",
+      "id": 2
     },
     {
-      "id": 3,
-      "email": "xyz3@gmail.com",
-      "password": "abc#123"
+      "name": "Amir",
+      "email": "amir@gmail.com",
+      "password": "Amir@1234",
+      "phone": "9090909090",
+      "category": "{}",
+      "id": 3
     },
     {
-      "name": "Shivam",
-      "email": "dhivam@gmail.com",
-      "password": "Shivam@25",
-      "phone": "9827364565",
+      "name": "aditi",
+      "email": "aditi@gmail.com",
+      "password": "1234",
+      "phone": "9999999999",
+      "category": "{}",
       "id": 4
     },
     {
-      "name": "Shivam",
-      "email": "dhivam@gmail.com",
-      "password": "Shivam@25",
-      "phone": "9827364565",
+      "name": "kaustubh",
+      "email": "k@gmail.com",
+      "password": "K@123123a",
+      "phone": "5678567856",
+      "category": "{}",
       "id": 5
-    },
-    {
-      "name": "Shivam",
-      "email": "shivam@gmail.com",
-      "password": "Shivam@25",
-      "phone": "9827364565",
-      "id": 7
-    }
-  ],
-  "xyz@gmail.com": [
-    {
-      "id": 1,
-      "category": "C",
-      "score": "5",
-      "date": "1/1/2021"
-    },
-    {
-      "id": 2,
-      "category": "CPP",
-      "score": 10,
-      "date": "8/1/2021"
-    },
-    {
-      "id": 2,
-      "category": "CPP",
-      "score": 7,
-      "date": "9/1/2021"
     }
   ],
   "Category": [
@@ -105,19 +90,22 @@
       "id": 7
     }
   ],
-  "C": [
+  "questions": [
     {
       "id": 1,
+      "cat": 1,
       "question": "Prototype of a function means _ ?",
       "option_1": "Name of Function",
       "option_2": "Output of Function",
       "option_3": "Declaration of Function",
       "option_4": "Input of a Function",
+      "url": "test",
       "correct_option": 3,
       "marks": 2
     },
     {
       "id": 2,
+      "cat": 1,
       "question": "Far pointer can access ",
       "option_1": "Single memory location",
       "option_2": "No memory location",
@@ -128,6 +116,7 @@
     },
     {
       "id": 3,
+      "cat": 1,
       "question": "An uninitialized pointer in C is called _",
       "option_1": "Constructor",
       "option_2": "DANGLING Pointer",
@@ -138,6 +127,7 @@
     },
     {
       "id": 4,
+      "cat": 1,
       "question": "A pointer that is pointing to NOTHING is called",
       "option_1": "VOID Pointer",
       "option_2": "DANGLING Pointer",
@@ -147,6 +137,7 @@
     },
     {
       "id": 5,
+      "cat": 1,
       "question": "Library function pow() belongs to which header file?",
       "option_1": "mathio.h",
       "option_2": "math.h",
@@ -156,6 +147,7 @@
     },
     {
       "id": 6,
+      "cat": 1,
       "question": "What is sizeof() in C?",
       "option_1": "Operator",
       "option_2": "Function",
@@ -165,6 +157,7 @@
     },
     {
       "id": 7,
+      "cat": 1,
       "question": "Which of the following is executed by Preprocessor?",
       "option_1": "#include<stdio.h>",
       "option_2": "return 0",
@@ -174,6 +167,7 @@
     },
     {
       "id": 8,
+      "cat": 1,
       "question": " Which one of the following is invalid macro in C programming?",
       "option_1": "#pragma",
       "option_2": "#error",
@@ -183,44 +177,29 @@
     },
     {
       "id": 9,
+      "cat": 1,
       "question": "What is the extension of output file produced by Preprocessor?",
       "option_1": "  .h",
       "option_2": "  .exe",
       "option_3": " .i",
       "option_4": ".asm",
-      "correct_option": 3
+      "correct_option": "3",
+      "marks": "5"
     },
     {
       "id": 10,
+      "cat": 1,
       "question": "Which compilation unit is responsible for adding header files content in the source code?",
       "option_1": "Linker",
       "option_2": "Compiler",
       "option_3": "Assembler",
       "option_4": "Preprocessor",
-      "correct_option": 4
+      "correct_option": "4",
+      "marks": "3"
     },
     {
-      "question": "yify",
-      "option_1": "op1",
-      "option_2": "asd",
-      "option_3": "asd",
-      "option_4": "4",
-      "marks": "4",
-      "id": 11
-    },
-    {
-      "question": "asd",
-      "option_1": "op1",
-      "option_2": "asd",
-      "option_3": "2",
-      "option_4": "op4",
-      "marks": "4",
-      "id": 12
-    }
-  ],
-  "JAVA": [
-    {
-      "id": 1,
+      "id": 11,
+      "cat": 3,
       "question": "Which of the following is not valid in case of Java String?",
       "option_1": "String class represents arrays of Strings.",
       "option_2": "String is final by design in Java.",
@@ -229,7 +208,8 @@
       "correct_option": 1
     },
     {
-      "id": 2,
+      "id": 12,
+      "cat": 3,
       "question": "Which of the following is a final class in Java?",
       "option_1": "All of these.",
       "option_2": " StringBuilder.",
@@ -238,7 +218,8 @@
       "correct_option": 1
     },
     {
-      "id": 3,
+      "id": 13,
+      "cat": 3,
       "question": "Is it possible to use String in the switch statement?",
       "option_1": "No, it's not.",
       "option_2": "None of these",
@@ -247,7 +228,8 @@
       "correct_option": 4
     },
     {
-      "id": 4,
+      "id": 14,
+      "cat": 3,
       "question": "Which class can access all public and protected methods and fields of its super class",
       "option_1": "Inner class",
       "option_2": "Outer class",
@@ -256,7 +238,8 @@
       "correct_option": 3
     },
     {
-      "id": 5,
+      "id": 15,
+      "cat": 3,
       "question": "Which tool is required on each machine to run a Java program?",
       "option_1": "JDK",
       "option_2": "SDK",
@@ -265,7 +248,8 @@
       "correct_option": 3
     },
     {
-      "id": 6,
+      "id": 16,
+      "cat": 3,
       "question": "Which method of the Runnable interface that must be implemented by all threads?",
       "option_1": "Run()",
       "option_2": "Start()",
@@ -274,7 +258,8 @@
       "correct_option": 1
     },
     {
-      "id": 7,
+      "id": 17,
+      "cat": 3,
       "question": "Base class for all exceptions.",
       "option_1": "Java.throwable",
       "option_2": "Java.Lang.throwable",
@@ -283,7 +268,8 @@
       "correct_option": 2
     },
     {
-      "id": 8,
+      "id": 18,
+      "cat": 3,
       "question": "Which of the below are reserved keyword in Java?",
       "option_1": "array",
       "option_2": "goto",
@@ -292,7 +278,8 @@
       "correct_option": 2
     },
     {
-      "id": 9,
+      "id": 19,
+      "cat": 3,
       "question": " java.util.Collections is a: ",
       "option_1": "Class",
       "option_2": "Interface",
@@ -301,18 +288,18 @@
       "correct_option": 1
     },
     {
-      "id": 10,
+      "id": 20,
+      "cat": 3,
       "question": "Which interface should be implemented for sorting on basis of many criteria’s?",
       "option_1": "Comparator",
       "option_2": "Comparable",
       "option_3": "Serializable",
       "option_4": "None of the above",
       "correct_option": 1
-    }
-  ],
-  "CPP": [
+    },
     {
-      "id": 1,
+      "id": 21,
+      "cat": 2,
       "question": "Which data type is used to create a variable that should store text?",
       "option_1": "myString",
       "option_2": "string",
@@ -321,7 +308,8 @@
       "correct_option": 2
     },
     {
-      "id": 2,
+      "id": 22,
+      "cat": 2,
       "question": "Which method can be used to find the length of a string?",
       "option_1": "getSize()",
       "option_2": "len()",
@@ -330,7 +318,8 @@
       "correct_option": 4
     },
     {
-      "id": 3,
+      "id": 23,
+      "cat": 2,
       "question": "In C++, cout is found in which library file?",
       "option_1": "ctype.h",
       "option_2": "stdlib.h",
@@ -339,7 +328,8 @@
       "correct_option": 4
     },
     {
-      "id": 4,
+      "id": 24,
+      "cat": 2,
       "question": "The keyword endl:",
       "option_1": "defines a symbolic constant",
       "option_2": "specifies that a function is to be compiled, if possible, as inline code",
@@ -348,7 +338,8 @@
       "correct_option": 4
     },
     {
-      "id": 5,
+      "id": 25,
+      "cat": 2,
       "question": "The standard identifier cin is used for:",
       "option_1": "a compiler flag.",
       "option_2": " standard output",
@@ -357,7 +348,8 @@
       "correct_option": 3
     },
     {
-      "id": 6,
+      "id": 26,
+      "cat": 2,
       "question": "Where does the object is created? ",
       "option_1": "class ",
       "option_2": "constructor",
@@ -366,7 +358,8 @@
       "correct_option": 1
     },
     {
-      "id": 7,
+      "id": 27,
+      "cat": 2,
       "question": "How many objects can present in a single classes",
       "option_1": "1",
       "option_2": "2 ",
@@ -375,7 +368,8 @@
       "correct_option": 4
     },
     {
-      "id": 8,
+      "id": 28,
+      "cat": 2,
       "question": "What does a floating point number contain?",
       "option_1": "None",
       "option_2": "Fractional part only.",
@@ -384,7 +378,8 @@
       "correct_option": 4
     },
     {
-      "id": 9,
+      "id": 29,
+      "cat": 2,
       "question": "What happens when an argument is passed by reference?",
       "option_1": "A variable is created within the function to hold the argument value.",
       "option_2": "The function can't access the argument value.",
@@ -393,18 +388,18 @@
       "correct_option": 1
     },
     {
-      "id": 10,
+      "id": 30,
+      "cat": 2,
       "question": "Which of the following keywords helps in resolving method at run-time.",
       "option_1": "virtual",
       "option_2": "extern",
       "option_3": "static",
       "option_4": "None.",
       "correct_option": 1
-    }
-  ],
-  "Python": [
+    },
     {
-      "id": 1,
+      "id": 31,
+      "cat": 4,
       "question": "What is called when a function is defined inside a class? ",
       "option_1": "Module",
       "option_2": "Class",
@@ -413,7 +408,8 @@
       "correct_option": 4
     },
     {
-      "id": 2,
+      "id": 32,
+      "cat": 4,
       "question": "Which of the following is the use of id() function in python? ",
       "option_1": "Id returns the identity of the object",
       "option_2": "Every object doesn’t have a unique id",
@@ -422,7 +418,8 @@
       "correct_option": 1
     },
     {
-      "id": 3,
+      "id": 33,
+      "cat": 4,
       "question": "time.time() returns ________ ",
       "option_1": "the current time",
       "option_2": "the current time in milliseconds",
@@ -431,7 +428,8 @@
       "correct_option": 4
     },
     {
-      "id": 4,
+      "id": 34,
+      "cat": 4,
       "question": "Suppose list1 is [3, 4, 5, 20, 5, 25, 1, 3], what is list1 after list1.pop(1)?",
       "option_1": "[3, 4, 5, 20, 5, 25, 1, 3]",
       "option_2": "[1, 3, 3, 4, 5, 5, 20, 25]",
@@ -440,7 +438,8 @@
       "correct_option": 3
     },
     {
-      "id": 5,
+      "id": 35,
+      "cat": 4,
       "question": "Which of the following operators has the highest precedence?",
       "option_1": "not",
       "option_2": "&",
@@ -449,7 +448,8 @@
       "correct_option": 3
     },
     {
-      "id": 6,
+      "id": 36,
+      "cat": 4,
       "question": " I want to generate a random secure hex token of 32 bytes to reset the password, which method should I use",
       "option_1": "secrets.hexToken(32)",
       "option_2": "secrets.hex_token(32)",
@@ -458,7 +458,8 @@
       "correct_option": 4
     },
     {
-      "id": 7,
+      "id": 37,
+      "cat": 4,
       "question": "To generate a random secure Universally unique ID which method should I use ",
       "option_1": "uuid.uuid4()",
       "option_2": "uuid.uuid1()",
@@ -467,7 +468,8 @@
       "correct_option": 1
     },
     {
-      "id": 8,
+      "id": 38,
+      "cat": 4,
       "question": "What is the output of  print(abs(-45.300))",
       "option_1": "45.3",
       "option_2": "-45.3",
@@ -476,13 +478,47 @@
       "correct_option": 1
     },
     {
-      "id": 10,
+      "id": 39,
+      "cat": 4,
       "question": "The format function, when applied on a string returns ___________",
       "option_1": "Error",
       "option_2": "int",
       "option_3": "bool",
       "option_4": "str",
       "correct_option": 2
+    },
+    {
+      "question": "what",
+      "cat": "2",
+      "option_1": "op1",
+      "option_2": "asd",
+      "option_3": "234",
+      "option_4": "4",
+      "marks": "4",
+      "id": 40
+    },
+    {
+      "question": "sdfhkhg",
+      "cat": "1",
+      "option_1": "3",
+      "option_2": "1",
+      "option_3": "1",
+      "option_4": "1",
+      "correct_option": "1",
+      "marks": "1",
+      "id": 41
+    },
+    {
+      "question": "erw",
+      "cat": "1",
+      "option_1": "sfdd",
+      "option_2": "dfs",
+      "option_3": "sdf",
+      "option_4": "sf",
+      "url": "dsf",
+      "correct_option": "sff",
+      "marks": "sdf",
+      "id": 42
     }
   ]
 }

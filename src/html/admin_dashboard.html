@@ -4,47 +4,81 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script defer src="../js/admin_dashboard.js"></script>
-
-
+    <!-- CDN ----  -->
+   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
 
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-
+    <!-- Local --  -->
+    <script src="../js/admin_dashboard.js"></script>
     <link rel="stylesheet" href="../css/admin_dashboard.css" />
+
+    <link rel="stylesheet" href="../css/index.css" />
     <title>Admin Dashboard</title>
   </head>
-
   <body>
+    <nav class="navbar navbar-expand-md font-weight-bold">
+      <a href="#"><img src="../images/main_lo.png" class="hlogo" /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarContent"
+        aria-controls="navbarContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="./admin_profile.html" class="nav-link">
+              <i class="fa fa-fw fa-user"></i> Profile</a
+            >
+          </li>
+          <li class="nav-item">
+            <button
+              href="user_register.html"
+              class="nav-link btn btn-white"
+              onclick="logout()"
+            >
+              <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <header>
-      <h1><span class="badge bg-light">Admin Dashboard</span></h1>
+      <h1 class="text-center">
+        <span class="badge dash-badge">Admin Dashboard</span>
+      </h1>
     </header>
 
     <!-- Section for Navbar -->
-    <nav class="nav_bar">
-      <ul class="nav flex-column">
-        <a href="admin_profile.html" class="nav-item btn btn-info" id="profile">Profile</a>
-        <button class="nav-item btn btn-info">Most Attempted Test</button>
-        <button class="nav-item btn btn-info">Log Out</button>
-      </ul>
-    </nav>
 
-
-    <section class="container-fluid">
+    <section class="container">
       <div class="section row"></div>
-      <!-- <div class="category-button" id="category-button">
-        <a class="btn btn-warning" data-toggle="modal" data-target="#addCat"
+      <div class="category-button" id="category-button">
+        <!-- <a class="btn btn-warning" data-toggle="modal" data-target="#addCat"
           >Add new Category</a
-        >
-      </div> -->
+        > -->
+      </div>
     </section>
 
     <!-- Modal to add new category -->
@@ -95,17 +129,5 @@
         </div>
       </div>
     </div>
-
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-      crossorigin="anonymous"
-    ></script>
-    <script src="../lib/jquery-3.5.1.js"></script>
   </body>
 </html>

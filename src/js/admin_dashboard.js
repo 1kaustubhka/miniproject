@@ -9,22 +9,19 @@ $(document).ready(() => {
         let ct = cat[i]["id"].toString();
         let src = cat[i]["url"];
         let name = cat[i]["cat"];
-        // console.log(src);
-        // console.log(ct);
         var cid = ct;
         let did = "d" + ct;
-        //alert(cid);
+        var idd = cat[i].id;
         $(".section").append(`
-            <div class="col-lg-6 col-sm-12 gy-2">
+            <div class="col-lg-4 col-sm-12 gy-2 ">
                         <div class="card">
-                            <img src="${src}" class="card-img-top" alt="Image not found!">
+                            <div style="margin:5% 5% 0% 5%; height:250px; width:310px; background:url(${src}) no-repeat; background-size: contain, cover; "></div>
                             <div class="card-body">
-                            <p id=category-name>${name}
-                            </p>
-
-                               <br>
-                                <button  id=${name} class="btn btn-primary crdbtn">View</button>
-                                <button  id=${did} class="btn btn-danger del">Delete</button>
+                            <h2 align="center"><p id=category-name class="badge badge-name">${name}
+                            </p></h2>
+                            <center>
+                                <button  id=${name} class="badge btn btn-warning crdbtn" value=${idd}>View</button>
+                                <button  id=${did} class="badge btn btn-danger del" value=${idd}>Delete</button></center>
                             </div>
                         </div>
                     </div>`);
@@ -57,8 +54,11 @@ $(document).ready(() => {
     e.preventDefault();
   });
 });
+
+
+
 $(document).on("click", ".crdbtn", function () {
-  window.open("admin_add_questions.html?id=" + this.id, "_self");
+  window.open("admin_add_questions.html?id=" + this.value, "_self");
 });
 $(document).on("click", ".del", function () {
   let id = this.id.substr(1);
@@ -71,3 +71,10 @@ $(document).on("click", ".del", function () {
     });
   }
 });
+
+function logout() {
+  if (sessionStorage.getItem("email") !== null) {
+    sessionStorage.removeItem("email");
+  }
+  location.replace("../../", "_self");
+}

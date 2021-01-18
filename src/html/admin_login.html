@@ -1,66 +1,70 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
-    <title>Admin Login</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="../css/style.css">
-
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-storage.js"></script>
-    <script src="../js/user_login_register.js"></script>
-
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>  <script src="../js/user_login_register.js"></script>
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/user_login.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script></head>
+<script src="../js/admin_login.js"></script>
+<title>Admin Login</title>
 
 <body>
-    <div class="wrapper">
-        <div class="inner">
-            <div class="image-holder">
-                <img src="../images/login.png">
-            </div>
-
-            <form action="">
-                <h3> Admin Log In</h3>
-                <div class="form-wrapper">
-                    <input id="email" placeholder="Enter Email" type="email" class="form-control">
-                </div>
-                <div class="form-wrapper">
-                    <input id="password" type="password" placeholder="Enter Password" class="form-control">
-                </div>
-
-                <div class="form-group container-login100-form-btn">
-                    <button onclick="login()" type="button">
-                        Login
-                    </button>
-                </div>
-                <div>
-                    <div class="w-full text-center p-t-27 p-b-239"></div>
-                    <span class="text-muted">
-                        Forget
-                    </span>
-                    <a href="../html/forgetPassword.html" class="text-dark">
-                        Forget Password?
-                    </a>
-                </div>
-
-                <div>
-                    <a href="../html/signup.html" class="text-dark" style="margin-top: 66%; font-size: 15px">
-                        Not Have an Account? Sign up Now
-                    </a>
-                </div>
-            </form>
-        </div>
+  <nav class="navbar navbar-expand-md   font-weight-bold">
+    <a href="../../"><img src="../images/main_lo.png" class="hlogo" /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarContent"
+      aria-controls="navbarContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa fa-fw fa-user"></i> Admin Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="user_login.html" class="nav-link"
+            ><i class="fa fa-fw fa-user"></i> User Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="user_register.html" class="nav-link"
+            ><i class="fa fa-fw fa-user-plus"></i> Register User</a
+          >
+        </li>
+      </ul>
     </div>
+  </nav>
+    <div class="login">    
+    <form id="admin-form" >
+      <img class="img-fluid img-responsive rounded mx-auto d-block" src="../images/user_profile_50.png">
+      <h2><b>Admin</b></h2><br>    
+      <center><label><b>User Name</b></label></center>
+      <input type="email" class="form-control" id="email2" required placeholder="abc@gmail.com"
+      pattern="^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">    
+      <br>
+
+      <center><label><b>Password</b></label></center>
+      <input type="password" class="form-control" placeholder="Password" required id="pass2">
+        <br>
+
+         <button type="submit" id="but1" class="btn btn-primary btn-block">Login</button>
+         <br>
 
 
+    </form>  
+    
 </body>
 
 </html>

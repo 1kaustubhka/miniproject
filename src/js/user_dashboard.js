@@ -1,7 +1,7 @@
 $(document).ready(() => {
   var selectedcat;
-  var th = 0;
-  localStorage.setItem("theme", th);
+  var currpass = "";
+  var em = sessionStorage.getItem("email");
 
   //------------------------------- loading header and footer -------------------------------------
 
@@ -11,15 +11,47 @@ $(document).ready(() => {
     //---------------------------------navbar jquery comes here---------------------------------------
 
     //----------------------------------PROFILE BUTTON----------------------------------------------
+    var pswd, idd;
     $("#profile").click(() => {
-      $("section").load("profile.html", () => {
+      $("section").load("user_profile.html", () => {
         //profile jquery
-        $("#profile_button").click(() => {
-          alert("Profile Jquery");
+       // var link = 'http://localhost:3000/user/'+sessionStorage.getItem("userId");
+        event.preventDefault();
+        $.ajax({
+          url: "http://localhost:3000/user?id="+sessionStorage.getItem("userId"),
+          type: "GET",
+          success: (x) => {
+            x.forEach((element) => {
+              console.log(element)
+              //   console.log(element.email.localeCompare(sessionStorage.getItem('email')));
+                currpass = element.password;
+                $("#user_name").val(element.name);
+                $("#user_email").val(element.email);
+                $("#user_contact").val(element.phone);
+              
+            });
+          },
         });
-        $("#profile_button2").on("click", () => {
-          alert("button 2 clicked");
-        });
+
+        $(document).on("click",".updatePassword",function(){
+          alert($("#user-new-pwd").val())
+          if(currpass == $("#user_pwd").val()){
+            alert("called")
+            $.ajax({
+              type: "patch",
+              data:{
+                password:$("#user-new-pwd").val()
+              },
+              url: "http://localhost:3000/user/"+sessionStorage.getItem("userId"),
+              success: function (response) {
+                
+              },
+            });  
+          }else{
+            alert("incorrect current password")
+          }
+            
+        })
       });
     });
 
@@ -111,9 +143,9 @@ $(document).ready(() => {
           for (let i = 0; i < dt.length; i++) {
             var ct = dt[i].cat.toString();
             console.log(ct);
-            var url = dt[i]['url'];
-            console.log("image is passing"+url);
-           
+            var url = dt[i]["url"];
+            console.log("image is passing" + url);
+            var idd = dt[i].id;
             var cid = ct + "_testsets";
             //alert(cid);
             $("section").append(`
@@ -123,7 +155,7 @@ $(document).ready(() => {
                                     <div class="card-body">
                                         <h5 class="card-title">${ct}</h5>
                                         <p class="card-text">Test Your Knowledge On ${ct}</p>
-                                        <button  id=${cid} value=${ct} class="btn btn-light crdbtn">Take Test</button>
+                                        <button  id=${cid} value=${idd} class="btn btn-dark crdbtn">Take Test</button>
                                     </div>
                                 </div>
                             </div>`);
@@ -156,8 +188,9 @@ $(document).ready(() => {
           console.log(ct);
           var cid = ct + "_testsets";
 
-          var url = dt[i]['url'];
-          console.log("image is passing"+url);
+          var url = dt[i]["url"];
+          var idd = dt[i].id;
+          console.log("image is passing" + url);
 
           // -----------------------------------------------dynamic creation of cards -------------------------------------
           $("section").append(`
@@ -167,7 +200,7 @@ $(document).ready(() => {
                                 <div class="card-body">
                                     <h5 class="card-title">${ct}</h5>
                                     <p class="card-text">Test Your Knowledge On ${ct}</p>
-                                    <button  id=${cid} value=${ct} class="btn btn-dark crdbtn" href="quiz_home.html">Take Test</button>
+                                    <button  id=${cid} value=${idd} class="btn btn-dark crdbtn" href="quiz_home.html">Take Test</button>
                                 </div>
                             </div>
                         </div>`);
@@ -176,7 +209,7 @@ $(document).ready(() => {
     });
     // -----------------------------------------------card button loading user testset table-----------------------------------
     $(document).on("click", ".crdbtn", function () {
-      alert(this.id);
+      alert(this.value);
       selectedcat = this.value;
       window.open(`quiz_home.html?cat=${selectedcat}`);
     });

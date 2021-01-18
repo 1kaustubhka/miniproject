@@ -2,26 +2,38 @@ body
 {  
     margin: 0;  
     padding: 0;  
-    background-color:#6abadeba;  
+    background-color: black;  
     font-family: 'Arial';  
 }  
 .login{  
-        width: 382px;  
+        width: 500px;  
         overflow: hidden;  
-        margin: auto;  
-        margin: 20 0 0 450px;  
-        padding: 80px;  
-        background: #23463f;  
+        margin-top: 100px;
+        margin: auto;
+        margin: 5 0 0 300px;  
+        padding: 50px;  
+        background: #64dfdf;  
         border-radius: 15px ;  
-          
-}  
+} 
+
+.register{  
+    width: 500px;  
+    overflow: hidden;
+    margin-top: 100px;  
+    margin: auto;
+    margin: 20 0 0 300px;  
+    padding: 50px;  
+    background: #64dfdf;  
+    border-radius: 15px ;  
+      
+} 
 h2{  
     text-align: center;  
     color: #277582;  
     padding: 20px;  
 }  
 label{  
-    color: #08ffd1;  
+    color: black;  
     font-size: 17px;  
 }  
 #Uname{  
@@ -46,14 +58,8 @@ label{
     border-radius: 17px;  
     padding-left: 7px;  
     color: blue;  
-  
-  
 }  
 span{  
     color: white;  
     font-size: 17px;  
 }  
-a{  
-    float: right;  
-    background-color: grey;  
-} 

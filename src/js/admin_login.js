@@ -1,23 +1,22 @@
 $(document).ready(function () {
-  $("form").submit(function (e) {
-    username = $("#username").val();
-    password = $("#password").val();
-    console.log(username + password);
+  $("#admin-form").submit(function (e) {
+    username = $("#email2").val();
+    password = $("#pass2").val();
     $.ajax({
-      url: "http://localhost:3000/admin/" + username,
+      url: "http://localhost:3000/admin/?email=" + username,
       type: "GET",
       dataType: "json",
       contentType: "application/json",
       success: function (data) {
-        if (data["password"] == password) {
-          alert("login success");
+        console.log(data);
+        if (data[0] != undefined) {
+          if (data[0]["password"] == password) {
+            location.replace("admin_dashboard.html", "_self");
+          } else {
+            alert("invalid credentials");
+          }
         } else {
-          alert("invalid credentials");
-        }
-      },
-      error: function (e) {
-        if (e.statusText === "Not Found") {
-          alert("User not found");
+          alert(" not found");
         }
       },
     });
