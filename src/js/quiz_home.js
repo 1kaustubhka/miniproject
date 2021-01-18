@@ -62,9 +62,7 @@ $(document).ready(function () {
         displayCurrentQuestion(currentQuestion);
         navButtons();
       },
-      error: (e) => {
-        console.log("Error" + e);
-      },
+      error: (e) => {},
     });
   }
 
@@ -191,15 +189,24 @@ if ($("#submit").text() === "Close") {
 function displayCurrentQuestion(currentQuestion) {
   var question = questions[currentQuestion].question;
   let qnum = currentQuestion + 1;
-
+  let url = questions[currentQuestion].url;
   var selectedOption = selectedAnswer[currentQuestion];
 
   var questionClass = $(document).find(".quizContainer > .question");
   $(questionClass).text(qnum + ".  " + question);
+
+  if(url === undefined){
+    url = ""
+  }
+  if (url.length > 0) {
+    $(".image").show();
+    $(".image").attr("src", url);
+  } else {
+    $(".image").hide();
+  }
   var choiceList = $(document).find(".quizContainer > .choiceList");
 
   $(choiceList).find("li").remove();
-  //var choice="hii";
   choice1 = [];
   var option_1 = questions[currentQuestion].option_1;
   var option_2 = questions[currentQuestion].option_2;
@@ -256,11 +263,12 @@ function viewResults() {
   $(".nextButton").hide();
   $("#timer").hide();
   $("#score").show();
-  $(".pushdata").show()
+  $(".pushdata").show();
   $("#submit").text("Close");
-  $("#submit").css("bottom", "5%");
+  $("#submit").css("bottom", "1%");
   $("#quizback").attr("class", "col-sm-12");
   $("#heading").text("RESULT");
+  $(".image").hide();
 
   $(".question").show();
   displayScore();
@@ -323,47 +331,41 @@ function navButtons() {
 }
 
 $(document).on("click", ".pushdata", function (e) {
-  alert("data-pushing")
-  var userid = sessionStorage.getItem("userid");
-
+  var userid = sessionStorage.getItem("userId");
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, "0");
   var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
   var yyyy = today.getFullYear();
   today = dd + "/" + mm + "/" + yyyy;
 
- // email = "xyz@gmail.com";
+  // email = "xyz@gmail.com";
 
   $.ajax({
     method: "GET",
-    url: "http://localhost:3000/user/"+userid,
-    async: false,
+    url: "http://localhost:3000/user/" + userid,
     success: function (result) {
-      result.forEach(function (userData) {
-        if (userid === userData.id) {
-          var $categoryData = JSON.parse(userData.category);
-
-          if ($categoryData[cat] == undefined) {
-            $categoryData[cat] = [];
-          }
-
-          $categoryData[cat][$categoryData[cat].length] = {
-            score: correctAnswers,
-            date: today,
-          };
-          userData["category"] = JSON.stringify($categoryData);
-          e.preventDefault();
-          $.ajax({
-            method: "PUT",
-            async: false,
-            url: "http://localhost:3000/user/" + userData.id,
-            data: userData,
-          });
+      if (parseInt(userid) === result.id) {
+        var $categoryData = JSON.parse(result.category);
+        if ($categoryData[cat] == undefined) {
+          $categoryData[cat] = [];
         }
-      });
+
+        $categoryData[cat][$categoryData[cat].length] = {
+          score: correctAnswers,
+          date: today,
+        };
+        result["category"] = JSON.stringify($categoryData);
+        e.preventDefault();
+        $.ajax({
+          method: "PUT",
+          async: false,
+          url: "http://localhost:3000/user/" + result.id,
+          data: result,
+        });
+      }
     },
     complete: () => {
-      window.open("user_dashboard.html", "_self");
+      window.close();
     },
   });
   e.preventDefault();

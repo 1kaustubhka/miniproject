@@ -7,7 +7,6 @@ $(document).ready(function () {
 
     success: function (response) {
       arr =response;
-      //console.log(arr)
     },
     contentType: "application/json",
     
@@ -15,7 +14,6 @@ $(document).ready(function () {
 
   $("#email").on("keyup", function () {
     var email = $("#email").val();
-    console.log(email);
     var flag = 0;
     for (var i = 0; i < arr.length; i++) {
       if (email == arr[i].email) {
@@ -105,7 +103,6 @@ $(document).ready(function () {
       },
 
       error: function (errorMessage) {
-        console.log("error" + errorMessage);
       },
     });
   });

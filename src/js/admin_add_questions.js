@@ -24,7 +24,7 @@ $(document).ready(() => {
           var did = "del" + id;
           $("table").append(
             `<tr><td>` +
-              id +
+              i +
               `</td><td>` +
               ques +
               `</td><td>` +
@@ -39,8 +39,6 @@ $(document).ready(() => {
               ca +
               `</td><td>` +
               mar +
-              `</td><td>` +
-              url +
               `</td>` +
               `<td><button class="edit" id="${eid}" 
             )>Edit</button></td><td><button class=del id="${did}">Delete</button></td></tr>`
@@ -88,9 +86,10 @@ $(document).on("click", ".edit", function () {
       $("#editOption1").val(data.option_1);
       $("#editOption2").val(data.option_2);
       $("#editOption3").val(data.option_3);
-      $("#editOption4").val(data.option_4);
+      $("#editOption4").val(data.option_4); 
       $("#editAnswer").val(data.correct_option);
       $("#editMarks").val(data.marks);
+      $("#editurl").val(data.url);
     },
   });
 });
@@ -106,7 +105,7 @@ $(document).on("click", "#updateQuestion", function () {
       option_2: $("#editOption2").val(),
       option_3: $("#editOption3").val(),
       option_4: $("#editOption4").val(),
-      url: $("editurl").val(),
+      url: $("#editurl").val(),
       correct_option: $("#editAnswer").val(),
       marks: $("#editMarks").val(),
     },

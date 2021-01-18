@@ -8,7 +8,6 @@ $(document).ready(function () {
       dataType: "json",
       contentType: "application/json",
       success: function (data) {
-        console.log(data);
         if (data[0] != undefined) {
           if (data[0]["password"] == password) {
             location.replace("admin_dashboard.html", "_self");
@@ -16,7 +15,7 @@ $(document).ready(function () {
             alert("invalid credentials");
           }
         } else {
-          alert(" not found");
+          alert("user not found");
         }
       },
     });
