@@ -10,6 +10,10 @@
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 150%;
 }
+.q-img {
+  width: 50%;
+  margin: 20px auto;
+}
 h4 {
   float: right;
   color: #ff0000;

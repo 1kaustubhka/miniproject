@@ -33,7 +33,7 @@
       "email": "amir@gmail.com",
       "password": "Amir@1234",
       "phone": "9090909090",
-      "category": "{}",
+      "category": "{\"1\":[{\"score\":3,\"date\":\"19/01/2021\"}]}",
       "id": 3
     },
     {
@@ -99,9 +99,9 @@
       "option_2": "Output of Function",
       "option_3": "Declaration of Function",
       "option_4": "Input of a Function",
-      "url": "test",
-      "correct_option": 3,
-      "marks": 2
+      "url": "https://mathbits.com/MathBits/CompSci/functions/func1.gif",
+      "correct_option": "3",
+      "marks": "2"
     },
     {
       "id": 2,
@@ -111,6 +111,7 @@
       "option_2": "No memory location",
       "option_3": "All memory location",
       "option_4": "First and Last Memory Address",
+      "url": "",
       "correct_option": 3,
       "marks": 2
     },
@@ -496,29 +497,6 @@
       "option_4": "4",
       "marks": "4",
       "id": 40
-    },
-    {
-      "question": "sdfhkhg",
-      "cat": "1",
-      "option_1": "3",
-      "option_2": "1",
-      "option_3": "1",
-      "option_4": "1",
-      "correct_option": "1",
-      "marks": "1",
-      "id": 41
-    },
-    {
-      "question": "erw",
-      "cat": "1",
-      "option_1": "sfdd",
-      "option_2": "dfs",
-      "option_3": "sdf",
-      "option_4": "sf",
-      "url": "dsf",
-      "correct_option": "sff",
-      "marks": "sdf",
-      "id": 42
     }
   ]
 }
